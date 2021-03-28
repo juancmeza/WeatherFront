@@ -120,7 +120,7 @@ class Home extends Component {
             />
           }
         </div>
-        <div>{<WeeklyContainer daily={this.state.daily} />}</div>
+        <div className="Weekly">{<WeeklyContainer daily={this.state.daily} />}</div>
         <div>
           <UserLocations
             showLocations={this.showLocations}

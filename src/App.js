@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
 import Home from "./components/Home";
-import Signup from "./components/Signup";
-import LogIn from "./components/LogIn";
 import UserContainer from "./components/UserContainer";
 import EditAccount from "./components/EditAccount";
-import Nav from "./Nav";
 import { Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

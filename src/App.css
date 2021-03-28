@@ -46,7 +46,7 @@ nav {
 }
 
 .navbar {
-  height: 55px;
+  height: 58px;
 }
 
 .NavStuff {
@@ -67,6 +67,7 @@ nav {
 .Weekly {
   display: flex;
   flex-direction: row;
+  width: 85%;
 }
 
 .i01d {
