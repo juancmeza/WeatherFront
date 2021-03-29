@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { InputBase } from '@material-ui/core';
+import { OutlinedInput } from '@material-ui/core';
 import Script from 'react-load-script';
+import SearchIcon from '@material-ui/icons/Search';
+import SearchBar from 'material-ui-search-bar';
 
 class Search extends Component {
   // Define Constructor
@@ -10,7 +12,9 @@ class Search extends Component {
     // Declare State
     this.state = {
       city: '',
-      query: ''
+      query: '',
+      latitude: '',
+      longitude: ''
     };
 
   }
@@ -31,7 +35,7 @@ class Search extends Component {
     // Avoid paying for data that you don't need by restricting the set of
     // place fields that are returned to just the address components and formatted
     // address.
-    this.autocomplete.setFields(['address_components', 'formatted_address']);
+    this.autocomplete.setFields(['address_components', 'formatted_address', 'geometry']);
 
     // Fire Event when a suggested name is selected
     this.autocomplete.addListener('place_changed', this.handlePlaceSelect);
@@ -42,32 +46,45 @@ class Search extends Component {
     // Extract City From Address Object
     const addressObject = this.autocomplete.getPlace();
     const address = addressObject.address_components;
+    const latitude = addressObject.geometry.location.lat();
+    const longitude = addressObject.geometry.location.lng();
 
-    // Check if address is valid
+
     if (address) {
-      // Set State
       this.setState(
         {
           city: address[0].long_name,
           query: addressObject.formatted_address,
+          // latitude: latitude,
+          // longitude: longitude
         }
       );
     }
   }
 
+  // updateQuery = (e) => {
+  //   this.setState({
+  //     query: e.target.value
+  //   })
+  // }
+
   render() {
     return (
       <div>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEGn6nA3Fp8RZUR4HSQz5KAck0am-JJ5c&libraries=places"
           onLoad={this.handleScriptLoad}
         />
-        <input id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
-          style={{
-            margin: '0 auto',
-            maxWidth: 800,
-          }}
-        />
+        <div>
+          <SearchIcon />
+          <SearchBar id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
+            style={{
+              margin: '0 auto',
+              maxWidth: 800,
+            }}
+          // onChange={() => this.updateQuery}
+          />
+        </div>
       </div>
     );
   }
