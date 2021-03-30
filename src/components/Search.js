@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { OutlinedInput } from '@material-ui/core';
 import Script from 'react-load-script';
-import SearchIcon from '@material-ui/icons/Search';
 import SearchBar from 'material-ui-search-bar';
 
 class Search extends Component {
@@ -55,34 +53,28 @@ class Search extends Component {
         {
           city: address[0].long_name,
           query: addressObject.formatted_address,
-          // latitude: latitude,
-          // longitude: longitude
+          latitude: latitude,
+          longitude: longitude
         }
       );
     }
   }
 
-  // updateQuery = (e) => {
-  //   this.setState({
-  //     query: e.target.value
-  //   })
-  // }
 
   render() {
     return (
       <div>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEGn6nA3Fp8RZUR4HSQz5KAck0am-JJ5c&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIomOwFDXLYJ2OfgsLeLDXQTm1NTvNAJgc&libraries=places"
           onLoad={this.handleScriptLoad}
         />
+        
         <div>
-          <SearchIcon />
           <SearchBar id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
             style={{
               margin: '0 auto',
-              maxWidth: 800,
+              minWidth: 600,
             }}
-          // onChange={() => this.updateQuery}
           />
         </div>
       </div>

@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import CurrentContainer from "./CurrentContainer";
 import WeeklyContainer from "./WeeklyContainer";
 import UserLocations from "./UserLocations";
-import EditAccount from "./EditAccount";
-import userEvent from "@testing-library/user-event";
 import Nav from "../Nav";
-import UserContainer from "./UserContainer";
 import "../App.css";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import Search from './Search.js'
 
 class Home extends Component {
   state = {
@@ -101,7 +98,8 @@ class Home extends Component {
     )
       .then((res) => res.json())
       .then((data) => {
-        if (data){
+        debugger
+        if (data.status !== 500){
         this.setState({ current: data.lmao.current, daily: data.lmao.daily });
         // console.log(this.state);
         }
@@ -109,9 +107,10 @@ class Home extends Component {
   }
   render() {
     return (
-      <div>
-        <Nav /> <br />
-        <h3 className="text-white"> Weather </h3>
+      <div className = 'Home'>
+        <Nav />
+        <h1 className="text-white"> WeatherNow </h1>
+        {/* <Search /> <br /> */}
         <div>
           {
             <CurrentContainer

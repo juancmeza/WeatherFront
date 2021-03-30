@@ -8,15 +8,15 @@ class CurrentContainer extends React.Component {
         <Card className="mx-auto">
           <Card.Content>
             <div className="Current-Weather">
-              <h3>
+              <h2>
                 Current Weather in: <br></br>
                 {this.props.selected} <br></br>
                 {this.props.current.weather[0].description}
-              </h3>
-              <p>Temp: {Math.round(this.props.current.temp)}°F</p>
-              <p>Feels Like: {Math.round(this.props.current.feels_like)}°F</p>
-              <p>Humidity: {this.props.current.humidity}%</p>
-              <p>Wind: {Math.round(this.props.current.wind_speed)} mph</p>
+              </h2>
+              <h3>Temp: {Math.round(this.props.current.temp)}°F</h3>
+              <h3>Feels Like: {Math.round(this.props.current.feels_like)}°F</h3>
+              <h3>Humidity: {this.props.current.humidity}%</h3>
+              <h3>Wind: {Math.round(this.props.current.wind_speed)} mph</h3>
             </div>
           </Card.Content>
         </Card>

@@ -9,8 +9,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Gotham Rounded", "sans-serif" source-code-pro, Menlo, Monaco,
+    Consolas, "Courier New", monospace;
 }
 html {
   background-color: black;

@@ -1,8 +1,23 @@
+*,
+*::before,
+*::after {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
+.Home {
+  background: linear-gradient(to right, #19aab1, #014e6f);
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -22,7 +37,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -46,14 +61,14 @@ nav {
 }
 
 .navbar {
-  height: 58px;
+  height: 70px;
 }
 
 .NavStuff {
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  width: 30%;
+  /* align-items: center; */
+  /* width: 30%; */
   list-style: none;
 }
 
@@ -140,7 +155,7 @@ nav {
   margin: auto !important;
   width: 50% !important;
   border: 3px !important;
-  padding: 10px !important;
+  padding: 5px !important;
 }
 
 html {
@@ -153,7 +168,7 @@ html {
 }
 
 .UserLocations {
-  width: 97%;
+  width: 95%;
   display: flex;
   justify-content: center;
 }
