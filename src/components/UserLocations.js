@@ -12,12 +12,12 @@ class UserLocations extends React.Component {
           <td>{location.city}</td>
           <td>
             <button onClick={() => this.props.selectLocation(location.city)}>
-              Show Forecast
+              Show Full Forecast
             </button>
           </td>
           <td>
             <button onClick={() => this.props.deleteUserLocation(location)}>
-              Remove Location
+              Delete
             </button>
           </td>
         </tr>

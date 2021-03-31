@@ -87,6 +87,7 @@ nav {
   display: flex;
   flex-direction: row;
   width: 85%;
+  max-width: 1200px;
 }
 
 .i01d {
@@ -178,7 +179,7 @@ html {
 }
 
 .cardInfo {
-  width: 5%;
+  width: 15%;
 }
 
 .weeklydiv {

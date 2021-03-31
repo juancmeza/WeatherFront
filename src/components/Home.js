@@ -4,7 +4,7 @@ import WeeklyContainer from "./WeeklyContainer";
 import UserLocations from "./UserLocations";
 import Nav from "../Nav";
 import "../App.css";
-import Search from './Search.js'
+import { Row, Col, Button} from "react-bootstrap"
 
 class Home extends Component {
   state = {
@@ -14,7 +14,7 @@ class Home extends Component {
     location_id: 0,
     user_locations: [],
     selected: "San Francisco",
-    locations: [],
+    // locations: [],
   };
 
   deleteUserLocation = (location) => {
@@ -99,7 +99,7 @@ class Home extends Component {
       .then((res) => res.json())
       .then((data) => {
         debugger
-        if (data.status !== 500){
+        if (data.status !== 500 && data){
         this.setState({ current: data.lmao.current, daily: data.lmao.daily });
         // console.log(this.state);
         }
@@ -108,19 +108,34 @@ class Home extends Component {
   render() {
     return (
       <div className = 'Home'>
-        <Nav />
+        <Nav fetchSelectedForecast={this.fetchSelectedForecast}/>
         <h1 className="text-white"> WeatherNow </h1>
         {/* <Search /> <br /> */}
         <div>
-          {
-            <CurrentContainer
-              current={this.state.current}
-              selected={this.state.selected}
+          <Row>
+            <Col>
+              <CurrentContainer
+                current={this.state.current}
+                selected={this.state.selected}
+              />
+          </Col>
+          {this.state.user_locations.length > 0 ? 
+          <Col>
+            <UserLocations
+            showLocations={this.showLocations}
+            user_locations={this.state.user_locations}
+            selectLocation={this.selectLocation2}
+            stateData={this.state}
+            deleteUserLocation={this.deleteUserLocation}
             />
+          </Col> :
+          null
           }
+          </Row>
         </div>
-        <div className="Weekly">{<WeeklyContainer daily={this.state.daily} />}</div>
-        <div>
+        <div className="Weekly">
+          {<WeeklyContainer daily={this.state.daily} />}</div>
+        {/* <div>
           <UserLocations
             showLocations={this.showLocations}
             user_locations={this.state.user_locations}
@@ -128,7 +143,7 @@ class Home extends Component {
             stateData={this.state}
             deleteUserLocation={this.deleteUserLocation}
           />
-        </div>
+        </div> */}
       </div>
     );
   }

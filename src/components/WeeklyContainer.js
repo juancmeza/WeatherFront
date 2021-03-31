@@ -11,12 +11,12 @@ class WeeklyContainer extends React.Component {
 
       return (
         <td>
-          <Card className="cardInfo">
+          <Card className="Weekly">
             <Card.Content>
               <Card.Header>{date.toLocaleDateString("en-US")}</Card.Header>
               <div className={"i" + eachDay.weather[0].icon}>
                 <ul>
-                  <p>Conditions: {eachDay.weather[0].description}</p>
+                  <p>{eachDay.weather[0].description}</p>
                   <p>High: {Math.round(eachDay.temp.max)}°F</p>
                   <p>Low: {Math.round(eachDay.temp.min)}°F</p>
                 </ul>
