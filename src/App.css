@@ -53,20 +53,24 @@
 }
 
 nav {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background: #fc9c54;
+  /* display: flex; */
+  /* justify-content: space-around; */
+  /* align-items: center; */
+  background: linear-gradient(rgb(255, 133, 3), rgb(250, 192, 1));
   color: white;
 }
 
 .navbar {
+  display: flex;
+  justify-content: flex-end;
   height: 70px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(42, 41, 41);
 }
 
 .NavStuff {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   /* align-items: center; */
   /* width: 30%; */
   list-style: none;
@@ -183,4 +187,18 @@ html {
 
 .signupdiv {
   display: center;
+}
+
+.pac-item {
+  font-size: 1.5rem;
+  padding: 10px 10px;
+}
+
+.pac-icon {
+  display: none;
+}
+
+.pac-item-query {
+  font-size: 1.5rem;
+  padding: 15px;
 }
