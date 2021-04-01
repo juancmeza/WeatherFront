@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
+import { Row, Col, Button} from "react-bootstrap"
+
 
 class WeeklyContainer extends React.Component {
   generateForecast = () => {
@@ -10,7 +12,7 @@ class WeeklyContainer extends React.Component {
       let date = new Date(unixTime * 1000);
 
       return (
-        <td>
+        <Col>
           <Card className="Weekly">
             <Card.Content>
               <Card.Header>{date.toLocaleDateString("en-US")}</Card.Header>
@@ -23,18 +25,16 @@ class WeeklyContainer extends React.Component {
               </div>
             </Card.Content>
           </Card>
-        </td>
+        </Col>
       );
     });
   };
   render() {
     return (
       <div className="mx-auto">
-        <table>
-          <tbody>
-            <tr>{this.generateForecast()}</tr>
-          </tbody>
-        </table>
+        <Container>
+          <Row>{this.generateForecast()}</Row>
+        </Container>
         <br></br>
       </div>
     );

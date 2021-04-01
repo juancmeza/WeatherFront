@@ -101,7 +101,6 @@ class Home extends Component {
         debugger
         if (data.status !== 500 && data){
         this.setState({ current: data.lmao.current, daily: data.lmao.daily });
-        // console.log(this.state);
         }
       });
   }
@@ -110,7 +109,6 @@ class Home extends Component {
       <div className = 'Home'>
         <Nav fetchSelectedForecast={this.fetchSelectedForecast}/>
         <h1 className="text-white"> WeatherNow </h1>
-        {/* <Search /> <br /> */}
         <div>
           <Row>
             <Col>
@@ -134,16 +132,8 @@ class Home extends Component {
           </Row>
         </div>
         <div className="Weekly">
-          {<WeeklyContainer daily={this.state.daily} />}</div>
-        {/* <div>
-          <UserLocations
-            showLocations={this.showLocations}
-            user_locations={this.state.user_locations}
-            selectLocation={this.selectLocation2}
-            stateData={this.state}
-            deleteUserLocation={this.deleteUserLocation}
-          />
-        </div> */}
+          {<WeeklyContainer daily={this.state.daily} />}
+        </div>
       </div>
     );
   }
