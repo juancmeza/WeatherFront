@@ -66,7 +66,7 @@ class Search extends Component {
     return (
       <div>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmMaqC6p2dtotPRk_nO-AiHG8uohYYxFI&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
           onLoad={this.handleScriptLoad}
         />
         

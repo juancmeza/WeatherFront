@@ -62,6 +62,7 @@ nav {
 
 .navbar {
   display: flex;
+  flex-direction: row;
   justify-content: flex-end;
   height: 70px;
   border-radius: 5px;
@@ -205,4 +206,11 @@ html {
 }
 
 .DayInWeek {
+  max-width: 80%;
+  min-width: 75%;
+  width: 25px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(42, 41, 41);
 }

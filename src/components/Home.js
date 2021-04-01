@@ -5,6 +5,8 @@ import UserLocations from "./UserLocations";
 import Nav from "../Nav";
 import "../App.css";
 import { Row, Col, Button} from "react-bootstrap"
+import TableContainer from '@material-ui/core/TableContainer';
+
 
 class Home extends Component {
   state = {
@@ -134,7 +136,9 @@ class Home extends Component {
           </Row>
         </div>
         <div className="tbd">
-          {<WeeklyContainer daily={this.state.daily} />}
+          <TableContainer>
+            {<WeeklyContainer daily={this.state.daily} />}
+          </TableContainer>
         </div>
       </div>
     );
