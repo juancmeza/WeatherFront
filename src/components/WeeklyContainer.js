@@ -1,6 +1,6 @@
 import React from "react";
 import { Card } from "semantic-ui-react";
-import { Row, Col, Button} from "react-bootstrap"
+import { Row, Col, Container} from "react-bootstrap"
 
 
 class WeeklyContainer extends React.Component {
@@ -13,18 +13,14 @@ class WeeklyContainer extends React.Component {
 
       return (
         <Col>
-          <Card className="Weekly">
-            <Card.Content>
-              <Card.Header>{date.toLocaleDateString("en-US")}</Card.Header>
+          <div className='DayInWeek'>
+              <h6>{date.toLocaleDateString("en-US")}</h6>
               <div className={"i" + eachDay.weather[0].icon}>
-                <ul>
                   <p>{eachDay.weather[0].description}</p>
                   <p>High: {Math.round(eachDay.temp.max)}°F</p>
                   <p>Low: {Math.round(eachDay.temp.min)}°F</p>
-                </ul>
-              </div>
-            </Card.Content>
-          </Card>
+            </div>
+          </div>
         </Col>
       );
     });

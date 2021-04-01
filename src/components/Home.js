@@ -54,10 +54,10 @@ class Home extends Component {
   };
 
   fetchSelectedForecast = (name) => {
-    fetch(`http://localhost:3000/user_locations/render_request?name=${name}`)
+    fetch(`http://localhost:3000/locations/?name=${name}`)
       .then((res) => res.json())
-      .then((name) => {
-        this.setState({ current: name.lmao.current, daily: name.lmao.daily });
+      .then((data) => {
+        this.setState({ current: data.lmao.current, daily: data.lmao.daily, selected: name });
       });
   };
 
@@ -94,11 +94,11 @@ class Home extends Component {
   componentDidMount() {
     // this.showLocations();
     fetch(
-      `http://localhost:3000/locations/?name="San%20Francisco"`
+      `http://localhost:3000/locations/?name=${this.state.selected}`
     )
       .then((res) => res.json())
       .then((data) => {
-        debugger
+        // debugger
         if (data.status !== 500 && data){
         this.setState({ current: data.lmao.current, daily: data.lmao.daily });
         }
@@ -131,7 +131,7 @@ class Home extends Component {
           }
           </Row>
         </div>
-        <div className="Weekly">
+        <div className="tbd">
           {<WeeklyContainer daily={this.state.daily} />}
         </div>
       </div>
