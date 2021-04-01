@@ -108,7 +108,9 @@ class Home extends Component {
     return (
       <div className = 'Home'>
         <Nav fetchSelectedForecast={this.fetchSelectedForecast}/>
-        <h1 className="text-white"> WeatherNow </h1>
+        {/* <h1 className="text-white"> WeatherNow </h1> */}
+        <br></br>
+        <br></br>
         <div>
           <Row>
             <Col>

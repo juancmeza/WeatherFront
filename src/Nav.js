@@ -8,7 +8,9 @@ class Nav extends Component {
   render() {
     return(
       <nav className="navbar">
-        <WbSunnyIcon fontSize='large'/>
+        <div className='App-logo'>
+          <WbSunnyIcon fontSize='large'/>
+        </div>
         <h1 className="text-white"> WeatherNow </h1>
         <Search fetchSelectedForecast={this.props.fetchSelectedForecast}/>
         <ul className ="NavStuff">
