@@ -5,8 +5,8 @@ class CurrentContainer extends React.Component {
   render() {
     return (
       <div>
-        <Card className="mx-auto">
-          <Card.Content>
+        <div className="mx-auto">
+          <div className="CurrentCard">
             <div className="Current-Weather">
               <div className={"i" + this.props.current.weather[0].icon}>
                 <h2>Current Weather in: </h2>
@@ -18,8 +18,8 @@ class CurrentContainer extends React.Component {
                 <h3>Wind: {Math.round(this.props.current.wind_speed)} mph</h3>
               </div>
             </div>
-          </Card.Content>
-        </Card>
+          </div>
+        </div>
         <br></br>
       </div>
     );

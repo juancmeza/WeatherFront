@@ -84,11 +84,21 @@ nav {
   justify-content: center;
 }
 
+.CurrentCard {
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgb(42, 41, 41);
+  width: 310px;
+  padding: 10px;
+  background: white;
+}
+
 .Weekly {
   display: flex;
+  /* left: 30px; */
   flex-direction: row;
-  width: 85%;
-  max-width: 1200px;
+  width: 1400px;
+  justify-content: center;
+  align-items: center;
 }
 
 .i01d {
@@ -177,6 +187,7 @@ html {
 .mx-auto {
   display: flex;
   padding: 10px;
+  justify-content: center;
 }
 
 .UserLocations {
@@ -189,9 +200,9 @@ html {
   width: 15%;
 }
 
-.weeklydiv {
+/* .weeklydiv {
   width: 85%;
-}
+} */
 
 .signupdiv {
   display: center;
