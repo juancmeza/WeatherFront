@@ -18,6 +18,7 @@
 }
 
 .App-logo {
+  position: absolute;
   height: 4vmin;
   pointer-events: none;
 }
@@ -61,6 +62,7 @@ nav {
 }
 
 .navbar {
+  position: sticky
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
