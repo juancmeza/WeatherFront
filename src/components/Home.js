@@ -136,9 +136,9 @@ class Home extends Component {
           </Row>
         </div>
         <div className="tbd">
-          <TableContainer>
+          {/* <TableContainer> */}
             {<WeeklyContainer daily={this.state.daily} />}
-          </TableContainer>
+          {/* </TableContainer> */}
         </div>
       </div>
     );

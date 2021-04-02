@@ -11,7 +11,7 @@ class Nav extends Component {
         <div className='App-logo'>
           <WbSunnyIcon fontSize='large'/>
         </div>
-        <h1 className="text-white"> WeatherNow </h1>
+        <h1 className="text-white"> Weathever </h1>
         <Search fetchSelectedForecast={this.props.fetchSelectedForecast}/>
         <ul className ="NavStuff">
           <Link to="/Edit">

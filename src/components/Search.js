@@ -66,7 +66,7 @@ class Search extends Component {
     return (
       <div>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzyteqswwxmS66U-l_re4YAvjv5F5ht20&libraries=places"
           onLoad={this.handleScriptLoad}
         />
         
@@ -74,7 +74,8 @@ class Search extends Component {
           <SearchBar id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
             style={{
               margin: '0 auto',
-              minWidth: 300,
+              maxWidth: 400,
+              minWidth: 275,
               height: 40
             }}
           />

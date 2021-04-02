@@ -15,7 +15,7 @@ class WeeklyContainer extends React.Component {
       let date = new Date(unixTime * 1000);
 
       return (
-        <TableCell>
+        <Col>
           <div className='DayInWeek'>
               <h6>{date.toLocaleDateString("en-US")}</h6>
               <div className={"i" + eachDay.weather[0].icon}>
@@ -24,7 +24,8 @@ class WeeklyContainer extends React.Component {
                   <p>Low: {Math.round(eachDay.temp.min)}°F</p>
               </div>
           </div>
-        </TableCell>
+          <br></br>
+        </Col>
       );
     });
   };
@@ -32,9 +33,9 @@ class WeeklyContainer extends React.Component {
   render() {
     return (
       <div className="mx-auto">
-        <Table>
-          <TableRow>{this.generateForecast()}</TableRow>
-        </Table>
+        <Container>
+          <Row>{this.generateForecast()}</Row>
+        </Container>
         <br></br>
       </div>
     );
