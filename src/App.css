@@ -107,6 +107,12 @@ nav {
   background-image: url(http://openweathermap.org/img/wn/04d@2x.png);
   background-repeat: no-repeat, repeat;
 }
+
+.i09d {
+  background-image: url(http://openweathermap.org/img/wn/09d@2x.png);
+  background-repeat: no-repeat, repeat;
+}
+
 .i10d {
   background-image: url(http://openweathermap.org/img/wn/10d@2x.png);
   background-repeat: no-repeat, repeat;
@@ -206,9 +212,9 @@ html {
 }
 
 .DayInWeek {
-  max-width: 80%;
-  min-width: 75%;
-  width: 25px;
+  /* max-width: 80%;
+  min-width: 75%; */
+  width: 125px;
   background-color: white;
   padding: 10px;
   border-radius: 5px;

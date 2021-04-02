@@ -28,6 +28,7 @@ class WeeklyContainer extends React.Component {
       );
     });
   };
+  
   render() {
     return (
       <div className="mx-auto">

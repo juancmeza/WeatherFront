@@ -74,7 +74,8 @@ class Search extends Component {
           <SearchBar id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
             style={{
               margin: '0 auto',
-              minWidth: 400,
+              minWidth: 300,
+              height: 40
             }}
           />
         </div>
