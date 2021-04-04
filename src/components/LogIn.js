@@ -44,7 +44,7 @@ class LogIn extends Component {
   render() {
     return (
       <div>
-        <div className="col-lg-4">
+        <div >
           <div className="card bg-dark card-form">
             <div className="card-body">
               <h3 className="text-white">Sign In</h3>

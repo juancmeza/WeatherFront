@@ -49,7 +49,7 @@ class Search extends Component {
 
       const latitude = addressObject.geometry.location.lat();
       const longitude = addressObject.geometry.location.lng();
-
+      
       this.setState(
         {
           city: address[0].long_name,

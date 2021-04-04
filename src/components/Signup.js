@@ -43,7 +43,7 @@ class Signup extends Component {
   render() {
     return (
       <div className="signupdiv">
-        <div className="col-lg-4">
+        <div >
           <div className="card bg-dark card-form">
             <div className="card-body">
               <h3 className="text-white"> Sign Up </h3>

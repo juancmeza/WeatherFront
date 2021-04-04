@@ -81,6 +81,10 @@ nav {
   list-style: none;
 }
 
+.Logout:hover {
+  background-color: rgb(194, 149, 0);
+}
+
 .Current-Weather {
   /* background-image: url("http://openweathermap.org/img/wn/02d@2x.png");
   background-repeat: no-repeat, repeat; */

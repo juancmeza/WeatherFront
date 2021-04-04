@@ -61,7 +61,7 @@ class Home extends Component {
     fetch(`http://localhost:3000/locations/?latitude=${latitude}&longitude=${longitude}`)
       .then((res) => res.json())
       .then((data) => {
-        if (data.status !== 500 && data){
+        if (data.status !== 400 && data.status !== 500 && data){
           this.setState({ current: data.lmao.current, daily: data.lmao.daily, selected: name });
         }
       });
@@ -115,7 +115,7 @@ class Home extends Component {
     return (
       <div className = 'Home'>
         <div className='Fix-nav'>
-          <Nav fetchSelectedForecast={this.fetchSelectedForecast}/>
+          <Nav fetchSelectedForecast={this.fetchSelectedForecast} handleLogout={this.props.handleLogout}/>
         </div>
         {/* <h1 className="text-white"> WeatherNow </h1> */}
         <br></br>

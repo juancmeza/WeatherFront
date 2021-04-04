@@ -64,7 +64,7 @@ class App extends Component {
               exact
               path="/Home"
               render={() => {
-                return <Home userInfo={this.state.user} />;
+                return <Home userInfo={this.state.user} handleLogout={this.handleLogout}/>;
               }}
             />
             <Route
