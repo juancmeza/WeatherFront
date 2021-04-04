@@ -45,7 +45,7 @@ class LogIn extends Component {
     return (
       <div>
         <div >
-          <div className="card bg-dark card-form">
+          <div className='Sign-on-card'>
             <div className="card-body">
               <h3 className="text-white">Sign In</h3>
               <form onSubmit={(e) => this.handleSubmit(e)}>

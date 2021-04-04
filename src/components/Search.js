@@ -76,7 +76,7 @@ class Search extends Component {
             style={{
               margin: '0 auto',
               maxWidth: 400,
-              minWidth: 275,
+              minWidth: 300,
               height: 40
             }}
           />

@@ -44,7 +44,7 @@ class Signup extends Component {
     return (
       <div className="signupdiv">
         <div >
-          <div className="card bg-dark card-form">
+          <div className="Sign-on-card">
             <div className="card-body">
               <h3 className="text-white"> Sign Up </h3>
 
