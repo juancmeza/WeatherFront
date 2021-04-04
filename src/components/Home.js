@@ -16,6 +16,8 @@ class Home extends Component {
     location_id: 0,
     user_locations: [],
     selected: "San Francisco",
+    latitude: 37.7749295,
+    longitude: -122.4194155,
     // locations: [],
   };
 
@@ -55,11 +57,13 @@ class Home extends Component {
     this.fetchSelectedForecast(name);
   };
 
-  fetchSelectedForecast = (name) => {
-    fetch(`http://localhost:3000/locations/?name=${name}`)
+  fetchSelectedForecast = (latitude, longitude, name) => {
+    fetch(`http://localhost:3000/locations/?latitude=${latitude}&longitude=${longitude}`)
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ current: data.lmao.current, daily: data.lmao.daily, selected: name });
+        if (data.status !== 500 && data){
+          this.setState({ current: data.lmao.current, daily: data.lmao.daily, selected: name });
+        }
       });
   };
 
@@ -95,21 +99,24 @@ class Home extends Component {
 
   componentDidMount() {
     // this.showLocations();
-    fetch(
-      `http://localhost:3000/locations/?name=${this.state.selected}`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        // debugger
-        if (data.status !== 500 && data){
-        this.setState({ current: data.lmao.current, daily: data.lmao.daily });
-        }
-      });
+    this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
+    // fetch(
+    //   `http://localhost:3000/locations/?name=${this.state.selected}`
+    // )
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     // debugger
+    //     if (data.status !== 500 && data){
+    //     this.setState({ current: data.lmao.current, daily: data.lmao.daily });
+    //     }
+    //   });
   }
   render() {
     return (
       <div className = 'Home'>
-        <Nav fetchSelectedForecast={this.fetchSelectedForecast}/>
+        <div className='Fix-nav'>
+          <Nav fetchSelectedForecast={this.fetchSelectedForecast}/>
+        </div>
         {/* <h1 className="text-white"> WeatherNow </h1> */}
         <br></br>
         <br></br>

@@ -44,11 +44,12 @@ class Search extends Component {
     // Extract City From Address Object
     const addressObject = this.autocomplete.getPlace();
     const address = addressObject.address_components;
-    const latitude = addressObject.geometry.location.lat();
-    const longitude = addressObject.geometry.location.lng();
-
 
     if (address) {
+
+      const latitude = addressObject.geometry.location.lat();
+      const longitude = addressObject.geometry.location.lng();
+
       this.setState(
         {
           city: address[0].long_name,
@@ -58,7 +59,7 @@ class Search extends Component {
         }
       );
     }
-    this.props.fetchSelectedForecast(this.state.city)
+    this.props.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.city)
   }
 
 
@@ -66,7 +67,7 @@ class Search extends Component {
     return (
       <div>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzyteqswwxmS66U-l_re4YAvjv5F5ht20&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
           onLoad={this.handleScriptLoad}
         />
         
