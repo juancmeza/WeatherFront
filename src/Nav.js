@@ -14,7 +14,9 @@ class Nav extends Component {
           <WbSunnyIcon fontSize='large'/>
         </div>
         <h1 className="Full-screen">Weather</h1>
-        <Search fetchSelectedForecast={this.props.fetchSelectedForecast}/>
+        <div className='Search-bar'>
+          <Search fetchSelectedForecast={this.props.fetchSelectedForecast}/>
+        </div>
         <div className ="NavStuff">
           <div className='Logout' title='Log out'>
             <ExitToAppRoundedIcon onClick={this.props.handleLogout} variant="outline-light">Log out</ExitToAppRoundedIcon>

@@ -71,8 +71,13 @@
   }
 
   .Search-bar {
-    minwidth: 275;
-    /* left: 20; */
+    max-width: 275px;
+    left: 60px;
+  }
+
+  .App-logo {
+    position: relative;
+    height: 8vmin;
   }
 }
 
@@ -89,7 +94,7 @@ nav {
   position: relative;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: flex-start;
   height: 70px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgb(42, 41, 41);
@@ -99,9 +104,13 @@ nav {
 .NavStuff {
   display: flex;
   justify-content: flex-start;
-  /* align-items: center; */
+  align-items: center;
   /* width: 30%; */
   list-style: none;
+}
+
+.Search-bar {
+  width: 350px;
 }
 
 .Logout:hover {
