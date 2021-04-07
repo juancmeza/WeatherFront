@@ -13,7 +13,7 @@ class Nav extends Component {
         <div className='App-logo'>
           <WbSunnyIcon fontSize='large'/>
         </div>
-        <h1 className="text-white">Weather</h1>
+        <h1 className="Full-screen">Weather</h1>
         <Search fetchSelectedForecast={this.props.fetchSelectedForecast}/>
         <div className ="NavStuff">
           <div className='Logout' title='Log out'>
