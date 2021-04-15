@@ -119,7 +119,6 @@ class Home extends Component {
         </div>
         {/* <h1 className="text-white"> WeatherNow </h1> */}
         <br></br>
-        <br></br>
         <div>
           <Row>
             <Col>
