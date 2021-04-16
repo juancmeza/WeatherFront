@@ -13,15 +13,17 @@ import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBor
 const useStyles = makeStyles(({ palette }) => ({
   card: {
     borderRadius: 12,
-    width: 125,
+    width: 130,
     textAlign: 'center',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
-
+    background: 'linear-gradient(#014e6f, #b3c2c9)'
   },
   avatar: {
     width: 65,
     height: 65,
     margin: 'auto',
+    marginTop: -10,
+    marginBottom: -10,
   },
   heading: {
     fontSize: 16,
@@ -31,9 +33,9 @@ const useStyles = makeStyles(({ palette }) => ({
     marginBottom: 0,
   },
   subheader: {
-    fontSize: 12,
-    color: palette.grey[500],
-    marginBottom: '0.875em',
+    fontSize: 14,
+    // color: palette.grey[500],
+    // marginBottom: '0.875em',
   },
   statLabel: {
     fontSize: 10,
@@ -69,11 +71,11 @@ export const DayCard = React.memo(function ProfileCard({date, description, high,
       <Box display={'flex'}>
         <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
           <p className={styles.statLabel}>High</p>
-          <p className={styles.statValue}>{high} °F</p>
+          <p className={styles.statValue}>{high}°</p>
         </Box>
         <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
           <p className={styles.statLabel}>Low</p>
-          <p className={styles.statValue}>{low} °F</p>
+          <p className={styles.statValue}>{low}°</p>
         </Box>
       </Box>
     </Card>

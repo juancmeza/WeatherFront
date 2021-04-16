@@ -260,7 +260,7 @@ html {
   box-shadow: 0 5px 10px rgb(42, 41, 41);
   width: 350px;
   padding: 10px;
-  background: linear-gradient(rgb(255, 133, 3), rgb(250, 192, 1));
+  background: linear-gradient(rgb(255, 133, 3), #fac001);
 }
 
 .pac-item {
