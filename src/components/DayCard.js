@@ -16,7 +16,8 @@ const useStyles = makeStyles(({ palette }) => ({
     width: 155,
     textAlign: 'center',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
-    background: 'linear-gradient(#014e6f, #19aab1)'
+    background: 'linear-gradient(#ffb514, #ff8503)',
+    color: 'rgb(255,255,255)'
   },
   avatar: {
     width: 65,
@@ -39,7 +40,7 @@ const useStyles = makeStyles(({ palette }) => ({
   },
   statLabel: {
     fontSize: 11,
-    color: palette.grey[500],
+    // color: palette.grey[500],
     fontWeight: 500,
     fontFamily:
       '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',

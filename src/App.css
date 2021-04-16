@@ -26,6 +26,7 @@
   top: 10;
   height: 4vmin;
   pointer-events: none;
+  color: rgb(255, 116, 3);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -260,7 +261,7 @@ html {
   box-shadow: 0 5px 10px rgb(42, 41, 41);
   width: 350px;
   padding: 10px;
-  background: linear-gradient(rgb(255, 133, 3), #fac001);
+  background: linear-gradient(#ff8503, #ffb514);
 }
 
 .pac-item {
