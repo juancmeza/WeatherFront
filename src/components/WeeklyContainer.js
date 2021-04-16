@@ -1,9 +1,7 @@
 import React from "react";
-import { Card } from "semantic-ui-react";
 import { Row, Col, Container} from "react-bootstrap"
-import Table from '@material-ui/core/Table';
-import TableRow from '@material-ui/core/TableRow';
-import TableCell from '@material-ui/core/TableCell';
+
+import DayCard from './DayCard.js'
 
 
 class WeeklyContainer extends React.Component {
@@ -16,7 +14,7 @@ class WeeklyContainer extends React.Component {
 
       return (
         <Col>
-          <div className='DayCard'>
+          {/* <div className='DayCard'>
               <div className='DayInWeek'>
                   <h6>{date.toLocaleDateString("en-US")}</h6>
                   <p>{eachDay.weather[0].description}</p>
@@ -26,6 +24,14 @@ class WeeklyContainer extends React.Component {
               <div className={"i" + eachDay.weather[0].icon}>
               </div>
           </div>
+          <br></br> */}
+          <DayCard date={date.toLocaleDateString("en-US")}
+                  description={eachDay.weather[0].description} 
+                  high={Math.round(eachDay.temp.max)}
+                  low={Math.round(eachDay.temp.min)}
+                  imgUrl={eachDay.weather[0].icon}
+          >
+          </DayCard>
           <br></br>
         </Col>
       );
