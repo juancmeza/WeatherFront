@@ -41,9 +41,7 @@ class WeeklyContainer extends React.Component {
   render() {
     return (
       <div className="mx-auto">
-        <Container>
           <Row>{this.generateForecast()}</Row>
-        </Container>
         <br></br>
       </div>
     );
