@@ -142,61 +142,6 @@ nav {
   align-items: center;
 }
 
-.i01d {
-  background-image: url(http://openweathermap.org/img/wn/01d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i02d {
-  background-image: url(http://openweathermap.org/img/wn/02d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i03d {
-  background-image: url(http://openweathermap.org/img/wn/03d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i04d {
-  background-image: url(http://openweathermap.org/img/wn/04d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-
-.i09d {
-  background-image: url(http://openweathermap.org/img/wn/09d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-
-.i10d {
-  background-image: url(http://openweathermap.org/img/wn/10d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i13d {
-  background-image: url(http://openweathermap.org/img/wn/13d@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i01n {
-  background-image: url(http://openweathermap.org/img/wn/01n@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i02n {
-  background-image: url(http://openweathermap.org/img/wn/02n@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i03n {
-  background-image: url(http://openweathermap.org/img/wn/03n@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i04n {
-  background-image: url(http://openweathermap.org/img/wn/04n@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i10n {
-  background-image: url(http://openweathermap.org/img/wn/10n@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-.i13n {
-  background-image: url(http://openweathermap.org/img/wn/13n@2x.png);
-  background-repeat: no-repeat, repeat;
-}
-
 .App {
   background: #273849;
 }

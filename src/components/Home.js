@@ -6,6 +6,7 @@ import Nav from "../Nav";
 import "../App.css";
 import { Row, Col, Button} from "react-bootstrap"
 import TableContainer from '@material-ui/core/TableContainer';
+import CurrentCard from './CurrentCard.js'
 
 
 class Home extends Component {
@@ -122,10 +123,15 @@ class Home extends Component {
         <div>
           <Row>
             <Col>
-              <CurrentContainer
+              {/* <CurrentContainer
                 current={this.state.current}
                 selected={this.state.selected}
-              />
+              /> */}
+              <CurrentCard current={this.state.current}
+                            selected={this.state.selected}
+              >
+
+              </CurrentCard>
           </Col>
           {this.state.user_locations.length > 0 ? 
           <Col>
