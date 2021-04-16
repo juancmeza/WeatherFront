@@ -17,6 +17,7 @@ const useStyles = makeStyles(() => ({
     padding: 12,
     background: 'linear-gradient(#ffb514, #ff8503)',
     color: 'rgb(255,255,255)',
+    boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
   },
   avatar: {
     width: 125,
@@ -25,6 +26,18 @@ const useStyles = makeStyles(() => ({
     marginTop: -20,
     marginBottom: -40,
   },
+  info: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  box: {
+    marginBottom: -10,
+  },
+  info2: {
+    marginTop: 10,
+    fontSize: 18,
+    fontWeight: 'bold',
+  }
 }));
 
 export const CurrentCard = React.memo(function MusicCard({current, selected}) {
@@ -35,24 +48,24 @@ export const CurrentCard = React.memo(function MusicCard({current, selected}) {
     <Card className={cx(styles.root, shadowStyles.root)}>
       <Avatar className={styles.avatar} src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`} />
       <CardContent>
-        <Box>
+        <Box className={styles.box}>
           <h2>
             {selected}
           </h2>
           <Divider light />
-          <p>
+          <p className={styles.info2}>
             {current.weather[0].description}
           </p>
-          <p>
-            Temp: {Math.round(current.temp)}°F
+          <p className={styles.info}>
+            Temp: {Math.round(current.temp)}° F
           </p>
-          <p>
-            Feels Like: {Math.round(current.feels_like)}°F
+          <p className={styles.info}>
+            Feels Like: {Math.round(current.feels_like)}° F
           </p>
-          <p>
+          <p className={styles.info}>
             Humidity: {current.humidity}%
           </p>
-          <p>
+          <p className={styles.info}>
             Wind: {Math.round(current.wind_speed)} mph
           </p>
         </Box>

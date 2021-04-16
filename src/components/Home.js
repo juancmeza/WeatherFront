@@ -130,8 +130,8 @@ class Home extends Component {
               <CurrentCard current={this.state.current}
                             selected={this.state.selected}
               >
-
               </CurrentCard>
+              <br></br>
           </Col>
           {this.state.user_locations.length > 0 ? 
           <Col>
