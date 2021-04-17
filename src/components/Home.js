@@ -5,8 +5,8 @@ import UserLocations from "./UserLocations";
 import Nav from "../Nav";
 import "../App.css";
 import { Row, Col, Button} from "react-bootstrap"
-import TableContainer from '@material-ui/core/TableContainer';
 import CurrentCard from './CurrentCard.js'
+import SavedTable from './SavedTable.js'
 
 
 class Home extends Component {
@@ -133,7 +133,7 @@ class Home extends Component {
               </CurrentCard>
               <br></br>
           </Col>
-          {this.state.user_locations.length > 0 ? 
+          {/* {this.state.user_locations.length > 0 ? 
           <Col>
             <UserLocations
             showLocations={this.showLocations}
@@ -144,7 +144,8 @@ class Home extends Component {
             />
           </Col> :
           null
-          }
+          } */}
+          <SavedTable></SavedTable>
           </Row>
         </div>
         <div className="tbd">
