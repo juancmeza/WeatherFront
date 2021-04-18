@@ -11,7 +11,7 @@ import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 
 const useStyles = makeStyles(() => ({
   action: {
-    backgroundColor: '#fff',
+    backgroundColor: '#ffb514',
     boxShadow: '0 1px 4px 0 rgba(0,0,0,0.12)',
     '&:hover': {
       backgroundColor: '#fff',
@@ -25,12 +25,12 @@ export const LocationCard = React.memo(function TutorCard() {
   const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
   return (
-    <Row p={1.5} gap={2} bgcolor={'#f5f5f5'} borderRadius={16}>
+    <Row p={1.5} gap={2} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16}>
       <Item>
         <Avatar
           classes={avatarStyles}
           src={
-            'https://www.biography.com/.image/t_share/MTU0ODUwMjQ0NjIwNzI0MDAx/chris-hemsworth-poses-during-a-photo-call-for-thor-ragnarok-on-october-15-2017-in-sydney-australia-photo-by-mark-metcalfe_getty-images-for-disney-square.jpg'
+            'http://openweathermap.org/img/wn/02d@2x.png'
           }
         />
       </Item>
@@ -39,6 +39,9 @@ export const LocationCard = React.memo(function TutorCard() {
         <InfoSubtitle>@fosterlive</InfoSubtitle>
       </Info>
       <Item ml={1} position={'middle'}>
+        <IconButton className={styles.action} classes={iconBtnStyles}>
+          <Add />
+        </IconButton>
         <IconButton className={styles.action} classes={iconBtnStyles}>
           <Add />
         </IconButton>
