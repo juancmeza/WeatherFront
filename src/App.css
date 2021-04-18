@@ -125,12 +125,15 @@ nav {
   justify-content: center;
 }
 
-.CurrentCard {
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgb(42, 41, 41);
-  width: 310px;
-  padding: 10px;
-  background: white;
+.Top {
+  /* border-radius: 5px; */
+  /* box-shadow: 0 5px 10px rgb(42, 41, 41); */
+  /* width: 310px; */
+  align-items: center;
+  justify-content: center;
+
+  /* padding: 10px; */
+  /* background: white; */
 }
 
 .Weekly {
@@ -237,4 +240,13 @@ html {
   border-radius: 5px;
   box-shadow: 0 5px 10px rgb(42, 41, 41);
   padding: 10px;
+}
+
+.Saved-table {
+  width: 310px;
+  height: 375px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgb(42, 41, 41);
+  background: linear-gradient(#ff8503, #ffb514);
+  margin: auto;
 }

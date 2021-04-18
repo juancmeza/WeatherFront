@@ -120,19 +120,19 @@ class Home extends Component {
         </div>
         {/* <h1 className="text-white"> WeatherNow </h1> */}
         <br></br>
-        <div>
+        <div className='Top'>
           <Row>
-            <Col>
-              {/* <CurrentContainer
-                current={this.state.current}
-                selected={this.state.selected}
-              /> */}
-              <CurrentCard current={this.state.current}
-                            selected={this.state.selected}
-              >
-              </CurrentCard>
-              <br></br>
-          </Col>
+              <Col>
+                {/* <CurrentContainer
+                  current={this.state.current}
+                  selected={this.state.selected}
+                /> */}
+                <CurrentCard current={this.state.current}
+                              selected={this.state.selected}
+                >
+                </CurrentCard>
+                <br></br>
+              </Col>
           {/* {this.state.user_locations.length > 0 ? 
           <Col>
             <UserLocations
@@ -145,7 +145,12 @@ class Home extends Component {
           </Col> :
           null
           } */}
-          <SavedTable></SavedTable>
+              <Col>
+                {/* <SavedTable></SavedTable> */}
+                <div className="Saved-table">
+                  
+                </div>
+              </Col>
           </Row>
         </div>
         <div className="tbd">
