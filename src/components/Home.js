@@ -36,12 +36,14 @@ class Home extends Component {
   };
 
 
-  showLocations = () => {
-    return fetch(`http://localhost:3000/users/${this.props.userInfo.id}`)
+  showSavedLocations = () => {
+    return fetch(`http://localhost:3000/users/${this.props.user.id}`)
       .then((res) => res.json())
       .then((data) => {
-        this.setState({ user_locations: data.locations });
-        console.log(this.state);
+        if (data){
+          this.setState({ user_locations: data.locations });
+          console.log(this.state);
+        }
       });
     // selectedLocations: {}
   };
@@ -79,7 +81,7 @@ class Home extends Component {
     console.log(location);
     let newUserLocation = {
       default: false,
-      user_id: this.props.userInfo.id,
+      user_id: this.props.user.id,
       location_id: location.id,
     };
     this.setState({
@@ -102,16 +104,8 @@ class Home extends Component {
   componentDidMount() {
     // this.showLocations();
     this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
-    // fetch(
-    //   `http://localhost:3000/locations/?name=${this.state.selected}`
-    // )
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     // debugger
-    //     if (data.status !== 500 && data){
-    //     this.setState({ current: data.lmao.current, daily: data.lmao.daily });
-    //     }
-    //   });
+    this.showSavedLocations();
+
   }
   render() {
     return (

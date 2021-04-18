@@ -64,7 +64,7 @@ class App extends Component {
               exact
               path="/Home"
               render={() => {
-                return <Home userInfo={this.state.user} handleLogout={this.handleLogout}/>;
+                return <Home user={this.state.user} handleLogout={this.handleLogout}/>;
               }}
             />
             <Route
@@ -79,7 +79,7 @@ class App extends Component {
               render={() => {
                 return (
                   <EditAccount
-                    userInfo={this.state.user}
+                    user={this.state.user}
                     handleLogout={this.handleLogout}
                   />
                 );
