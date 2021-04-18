@@ -7,6 +7,7 @@ import "../App.css";
 import { Row, Col, Button} from "react-bootstrap"
 import CurrentCard from './CurrentCard.js'
 import SavedTable from './SavedTable.js'
+import LocationCard from './LocationCard.js'
 
 
 class Home extends Component {
@@ -148,7 +149,10 @@ class Home extends Component {
               <Col>
                 {/* <SavedTable></SavedTable> */}
                 <div className="Saved-table">
-                  
+                  <LocationCard></LocationCard>
+                  <LocationCard></LocationCard>
+                  <LocationCard></LocationCard>
+                  <LocationCard></LocationCard>
                 </div>
               </Col>
           </Row>
