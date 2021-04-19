@@ -8,6 +8,7 @@ import { Row, Col, Button} from "react-bootstrap"
 import CurrentCard from './CurrentCard.js'
 import SavedTable from './SavedTable.js'
 import LocationCard from './LocationCard.js'
+import { ContactSupportSharp } from "@material-ui/icons";
 
 
 class Home extends Component {
@@ -40,13 +41,27 @@ class Home extends Component {
     return fetch(`http://localhost:3000/users/${this.props.user.id}`)
       .then((res) => res.json())
       .then((data) => {
-        if (data){
-          this.setState({ user_locations: data.locations });
+        if (data.user_locations){
+          this.setState({ user_locations: data.user_locations });
           console.log(this.state);
         }
       });
     // selectedLocations: {}
   };
+
+  renderUserLocations = () => {
+    return this.state.user_locations.map(location => {
+      fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status !== 400 && data.status !== 500 && data){
+          debugger
+          return <LocationCard data={data} location={location}></LocationCard>;
+        }
+      });
+      
+    })
+  }
 
   selectLocation = (e) => {
     this.setState({ selected: e.target.value });
@@ -103,9 +118,13 @@ class Home extends Component {
 
   componentDidMount() {
     // this.showLocations();
+    this.setState({
+      user_locations: this.props.user_locations
+    })
+    
     this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
-    this.showSavedLocations();
-
+    console.log('props', this.props.user_locations)
+    console.log('state', this.state.user_locations)
   }
   render() {
     return (
@@ -141,13 +160,12 @@ class Home extends Component {
           null
           } */}
               <Col>
-                {/* <SavedTable></SavedTable> */}
+                {this.state.user_locations.length > 0 ?
                 <div className="Saved-table">
-                  <LocationCard></LocationCard>
-                  <LocationCard></LocationCard>
-                  <LocationCard></LocationCard>
-                  <LocationCard></LocationCard>
-                </div>
+                  {this.renderUserLocations()}
+                </div> : 
+                null
+                }
               </Col>
           </Row>
         </div>

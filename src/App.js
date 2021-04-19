@@ -13,6 +13,7 @@ class App extends Component {
     username: "",
     password: "",
     user: {},
+    user_locations: [],
     redirect: false,
     logged: false,
   };
@@ -42,7 +43,7 @@ class App extends Component {
         .then((res) => res.json())
         .then((user) =>
           this.setState({
-            user: user,
+            user: user, user_locations: user.user_locations
           })
         );
     }
@@ -64,7 +65,7 @@ class App extends Component {
               exact
               path="/Home"
               render={() => {
-                return <Home user={this.state.user} handleLogout={this.handleLogout}/>;
+                return <Home user={this.state.user} user_locations={this.state.user_locations} handleLogout={this.handleLogout}/>;
               }}
             />
             <Route

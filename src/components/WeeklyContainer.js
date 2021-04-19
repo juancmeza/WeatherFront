@@ -5,6 +5,7 @@ import DayCard from './DayCard.js'
 
 
 class WeeklyContainer extends React.Component {
+  
   generateForecast = () => {
     let newForecast = [...this.props.daily];
     newForecast.shift();
