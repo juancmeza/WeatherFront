@@ -66,7 +66,7 @@ class Home extends Component {
           locationData = data
         }
       });
-
+      debugger
       return <LocationCard data={locationData} location={location}></LocationCard>
     })
   }

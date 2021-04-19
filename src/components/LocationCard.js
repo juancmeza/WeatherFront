@@ -20,23 +20,24 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const LocationCard = React.memo(function TutorCard() {
+export const LocationCard = React.memo(function TutorCard({data, location}) {
   const styles = useStyles();
   const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
+  debugger
   return (
     <Row p={1.5} gap={2} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16}>
       <Item>
         <Avatar
           classes={avatarStyles}
           src={
-            'http://openweathermap.org/img/wn/02d@2x.png'
+            `http://openweathermap.org/img/wn/${data.current.weather[0].icon}@2x.png`
           }
         />
       </Item>
       <Info position={'middle'} useStyles={useTutorInfoStyles}>
-        <InfoTitle>Kenny Foster</InfoTitle>
-        <InfoSubtitle>@fosterlive</InfoSubtitle>
+        <InfoTitle>{location.city}</InfoTitle>
+        <InfoSubtitle>{data.current.temp}</InfoSubtitle>
       </Info>
       <Item ml={1} position={'middle'}>
         <IconButton className={styles.action} classes={iconBtnStyles}>
