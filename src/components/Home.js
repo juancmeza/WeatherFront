@@ -21,6 +21,8 @@ class Home extends Component {
     selected: "San Francisco",
     latitude: 37.7749295,
     longitude: -122.4194155,
+    savedLocationData: '',
+    savedLocation: '',
     // locations: [],
   };
 
@@ -51,15 +53,21 @@ class Home extends Component {
 
   renderUserLocations = () => {
     return this.state.user_locations.map(location => {
+      var locationData
       fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 400 && data.status !== 500 && data){
-          debugger
-          return <LocationCard data={data} location={location}></LocationCard>;
+          // debugger
+          // this.setState({
+          //   savedLocationData: data,
+          //   savedLocation: location
+          // })
+          locationData = data
         }
       });
-      
+
+      return <LocationCard data={locationData} location={location}></LocationCard>
     })
   }
 
@@ -121,7 +129,7 @@ class Home extends Component {
     this.setState({
       user_locations: this.props.user_locations
     })
-    
+
     this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
     console.log('props', this.props.user_locations)
     console.log('state', this.state.user_locations)
