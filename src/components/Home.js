@@ -53,21 +53,19 @@ class Home extends Component {
 
   renderUserLocations = () => {
     return this.state.user_locations.map(location => {
-      var locationData
       fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 400 && data.status !== 500 && data){
-          // debugger
-          // this.setState({
-          //   savedLocationData: data,
-          //   savedLocation: location
-          // })
-          locationData = data
+          this.setState({
+            savedLocationData: data.lmao,
+            savedLocation: location
+          })
+          debugger
         }
       });
-      debugger
-      return <LocationCard data={locationData} location={location}></LocationCard>
+      
+      return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
     })
   }
 
@@ -167,14 +165,14 @@ class Home extends Component {
           </Col> :
           null
           } */}
-              <Col>
                 {this.state.user_locations.length > 0 ?
-                <div className="Saved-table">
-                  {this.renderUserLocations()}
-                </div> : 
+                <Col>
+                  <div className="Saved-table">
+                    {this.renderUserLocations()}
+                  </div>
+                </Col> : 
                 null
                 }
-              </Col>
           </Row>
         </div>
         <div className="tbd">
