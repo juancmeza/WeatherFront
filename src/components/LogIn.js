@@ -31,10 +31,15 @@ class LogIn extends Component {
       body: JSON.stringify(newUser),
     })
       .then((res) => res.json())
-      .then((user) => this.props.getUser(user))
       .then((user) => {
+        this.props.getUser(user)
+        console.log(user, this.props.getUser(user))
+        })
+      .then((user) => {
+        console.log(user, 'Login component')
         this.setState({
           user: user,
+          // user_locations: user.user_locations,
           redirect: true,
           logged: true,
         });

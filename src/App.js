@@ -25,6 +25,7 @@ class App extends Component {
       username: "",
       password: "",
       user: {},
+      user_locations: [],
       redirect: true,
       logged: false,
     });
@@ -34,6 +35,7 @@ class App extends Component {
     sessionStorage.setItem("userId", userObject.id);
     this.setState({
       user: userObject,
+      user_locations: userObject.user_locations
     });
   };
   componentDidMount() {

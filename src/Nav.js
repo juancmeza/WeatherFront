@@ -3,7 +3,6 @@ import './App.css';
 import { Link } from 'react-router-dom';
 import Search from "./components/Search";
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
-import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 
 class Nav extends Component {

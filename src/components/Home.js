@@ -39,32 +39,31 @@ class Home extends Component {
   };
 
 
-  showSavedLocations = () => {
-    return fetch(`http://localhost:3000/users/${this.props.user.id}`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.user_locations){
-          this.setState({ user_locations: data.user_locations });
-          console.log(this.state);
-        }
-      });
-    // selectedLocations: {}
-  };
+  // showSavedLocations = () => {
+  //   return fetch(`http://localhost:3000/users/${this.props.user.id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       if (data.user_locations){
+  //         this.setState({ user_locations: data.user_locations });
+  //         console.log(this.state);
+  //       }
+  //     });
+  // };
 
   renderUserLocations = () => {
-    return this.state.user_locations.map(location => {
+    return this.props.user_locations.map(location => {
       fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
       .then((res) => res.json())
       .then((data) => {
+        debugger
         if (data.status !== 400 && data.status !== 500 && data){
           this.setState({
             savedLocationData: data.lmao,
             savedLocation: location
           })
-          debugger
         }
       });
-      
+
       return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
     })
   }
@@ -124,13 +123,13 @@ class Home extends Component {
 
   componentDidMount() {
     // this.showLocations();
-    this.setState({
-      user_locations: this.props.user_locations
-    })
+    // this.setState({
+    //   user_locations: this.props.user_locations
+    // })
 
     this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
-    console.log('props', this.props.user_locations)
-    console.log('state', this.state.user_locations)
+    // console.log('props', this.props.user_locations)
+    // console.log('state', this.state.user_locations)
   }
   render() {
     return (
