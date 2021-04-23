@@ -35,7 +35,8 @@ class App extends Component {
     sessionStorage.setItem("userId", userObject.id);
     this.setState({
       user: userObject,
-      user_locations: userObject.user_locations
+      user_locations: userObject.user_locations,
+      logged: true,
     });
   };
   componentDidMount() {
@@ -67,7 +68,8 @@ class App extends Component {
               exact
               path="/Home"
               render={() => {
-                return <Home user={this.state.user} user_locations={this.state.user_locations} handleLogout={this.handleLogout}/>;
+                return this.state.logged ? <Home user={this.state.user} user_locations={this.state.user_locations} handleLogout={this.handleLogout}/> :
+                  <UserContainer getUser={this.getUser} />;
               }}
             />
             <Route
