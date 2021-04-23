@@ -1,7 +1,7 @@
 import React, { Component } from "react";
+import UserContainer from "./components/UserContainer";
 import "./App.css";
 import Home from "./components/Home";
-import UserContainer from "./components/UserContainer";
 import EditAccount from "./components/EditAccount";
 import { Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";

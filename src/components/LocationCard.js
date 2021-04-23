@@ -24,7 +24,7 @@ export const LocationCard = React.memo(function TutorCard({data, location}) {
   const styles = useStyles();
   const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
-  debugger
+  // debugger
   return (
     <Row p={1.5} gap={2} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16}>
       <Item>

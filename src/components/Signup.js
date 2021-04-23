@@ -31,8 +31,8 @@ class Signup extends Component {
       body: JSON.stringify(newUser),
     })
       .then((res) => res.json())
-      .then((user) => this.props.getUser(user))
       .then((user) => {
+        this.props.getUser(user)
         this.setState({
           user: user,
           redirect: true,
