@@ -51,23 +51,26 @@ class Home extends Component {
   // };
 
   renderUserLocations = (locations) => {
-     const promises = locations.map(async (location) => {
+      const promises = locations.map(async (location) => {
       await fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.lmao.current, 'Home fetch')
         // debugger
-        if (data.status !== 400 && data.status !== 500 && data){
-          this.setState({
-            savedLocationData: data.lmao,
-            savedLocation: location
-          })
-        }
+        // if (data.status !== 400 && data.status !== 500 && data){
+        //   this.setState({
+        //     savedLocationData: data.lmao,
+        //     savedLocation: location
+        //   })
+        // }
+        return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
+
       });
 
-      return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
+      // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
     })
-    return Promise.all(promises)
+    // return Promise.all(promises)
+    console.log(Promise.all(promises))
   }
 
   selectLocation = (e) => {
@@ -127,12 +130,12 @@ class Home extends Component {
     // this.showLocations();
     // this.mounted = true;
 
-    if (this.mounted){
+    // if (this.mounted){
       this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
       this.setState({
         user_locations: this.props.user_locations
       });
-    }
+    // }
 
     // console.log('props', this.props.user_locations)
     // console.log('state', this.state.user_locations)
