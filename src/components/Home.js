@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import CurrentContainer from "./CurrentContainer";
 import WeeklyContainer from "./WeeklyContainer";
-import UserLocations from "./UserLocations";
 import Nav from "../Nav";
 import "../App.css";
 import { Row, Col, Button} from "react-bootstrap"
 import CurrentCard from './CurrentCard.js'
-import SavedTable from './SavedTable.js'
 import LocationCard from './LocationCard.js'
-import { ContactSupportSharp } from "@material-ui/icons";
+import SavedLocationsContainer from "./SavedLocationsContainer.js";
 
 
 class Home extends Component {
@@ -50,30 +47,27 @@ class Home extends Component {
   //     });
   // };
 
-  renderUserLocations = (locations) => {
-      return locations.map(async (location) => {
-        let cardData = new Promise((resolve, reject) => {
-          let resp = fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`).then((res) => res.json())
+  // renderUserLocations = (locations) => {
+  //     const promises = locations.map(async (location) => {
+  //         let resp = await fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`).then((res) => res.json())
 
-          if (resp.status !== 400 && resp.status !== 500 && resp){
-            // this.setState({
-            //   savedLocationData: data.lmao,
-            //   savedLocation: location
-            // })
-            resolve (resp)
-          } else{
-            reject (null)
-          }
-        })
+  //         if (resp.status !== 400 && resp.status !== 500 && resp){
+  //           // this.setState({
+  //           //   savedLocationData: data.lmao,
+  //           //   savedLocation: location
+  //           // })
+  //           return <LocationCard data={resp.lmao} location={location}></LocationCard>
+  //         }
 
-        const data = await cardData
-        // console.log(data)
-        return <LocationCard data={data} location={location}></LocationCard>
-        // debugger
-      });
+  //       // console.log(data)
+  //       // return <LocationCard data={data} location={location}></LocationCard>
+  //       // debugger
+  //     });
 
-      // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
-  }
+  //     debugger
+
+  //     // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
+  // }
     // return Promise.all(promises)
     // console.log(promises)
   
@@ -186,7 +180,7 @@ class Home extends Component {
                 {this.props.user_locations.length > 0 ?
                 <Col>
                   <div className="Saved-table">
-                    {this.renderUserLocations(this.props.user_locations)}
+                    <SavedLocationsContainer user_locations={this.props.user_locations}></SavedLocationsContainer>
                   </div>
                 </Col> : 
                 null
