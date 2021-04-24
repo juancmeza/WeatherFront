@@ -51,27 +51,32 @@ class Home extends Component {
   // };
 
   renderUserLocations = (locations) => {
-      const promises = locations.map(async (location) => {
-      await fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.lmao.current, 'Home fetch')
-        // debugger
-        // if (data.status !== 400 && data.status !== 500 && data){
-        //   this.setState({
-        //     savedLocationData: data.lmao,
-        //     savedLocation: location
-        //   })
-        // }
-        return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
+      return locations.map(async (location) => {
+        let cardData = new Promise((resolve, reject) => {
+          let resp = fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`).then((res) => res.json())
 
+          if (resp.status !== 400 && resp.status !== 500 && resp){
+            // this.setState({
+            //   savedLocationData: data.lmao,
+            //   savedLocation: location
+            // })
+            resolve (resp)
+          } else{
+            reject (null)
+          }
+        })
+
+        const data = await cardData
+        // console.log(data)
+        return <LocationCard data={data} location={location}></LocationCard>
+        // debugger
       });
 
       // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
-    })
-    // return Promise.all(promises)
-    console.log(Promise.all(promises))
   }
+    // return Promise.all(promises)
+    // console.log(promises)
+  
 
   selectLocation = (e) => {
     this.setState({ selected: e.target.value });
