@@ -20,7 +20,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const LocationCard = React.memo(function TutorCard({data, location}) {
+export const LocationCard = React.memo(function TutorCard({data}) {
   const styles = useStyles();
   const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
@@ -36,7 +36,7 @@ export const LocationCard = React.memo(function TutorCard({data, location}) {
         />
       </Item>
       <Info position={'middle'} useStyles={useTutorInfoStyles}>
-        <InfoTitle>{location.city}</InfoTitle>
+        <InfoTitle>{data.location.city}</InfoTitle>
         <InfoSubtitle>{data.current.temp}</InfoSubtitle>
       </Info>
       <Item ml={1} position={'middle'}>

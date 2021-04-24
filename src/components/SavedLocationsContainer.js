@@ -21,7 +21,7 @@ fetchUserLocations = (locations) => {
           data.lmao['location'] = location
           debugger
           this.setState({
-            savedLocationData: [...this.state.savedLocationData, data.lmao],
+            savedLocationsData: [...this.state.savedLocationsData, data.lmao],
           })
         }
       })
@@ -30,19 +30,19 @@ fetchUserLocations = (locations) => {
     // debugger
   });
 }
-// renderUserLocations = () => {
-//     return this.state.savedLocationData.map(locationData => {
-//       return <LocationCard data={locationData.lmao} location={LocationData.location}></LocationCard>
+renderUserLocations = () => {
+    return this.state.savedLocationsData.map(locationData => {
+      return <LocationCard data={locationData}></LocationCard>
 
-//     })
-//   }
+    })
+  }
 //   // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
 // }
 
   render () {
     return (
       <div>
-
+          {this.renderUserLocations()}
       </div>
     )
   }
