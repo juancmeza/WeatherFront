@@ -20,7 +20,6 @@ class Home extends Component {
     longitude: -122.4194155,
     savedLocationData: '',
     savedLocation: '',
-    // locations: [],
   };
 
   deleteUserLocation = (location) => {
@@ -35,42 +34,6 @@ class Home extends Component {
     );
   };
 
-
-  // showSavedLocations = () => {
-  //   return fetch(`http://localhost:3000/users/${this.props.user.id}`)
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.user_locations){
-  //         this.setState({ user_locations: data.user_locations });
-  //         console.log(this.state);
-  //       }
-  //     });
-  // };
-
-  // renderUserLocations = (locations) => {
-  //     const promises = locations.map(async (location) => {
-  //         let resp = await fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`).then((res) => res.json())
-
-  //         if (resp.status !== 400 && resp.status !== 500 && resp){
-  //           // this.setState({
-  //           //   savedLocationData: data.lmao,
-  //           //   savedLocation: location
-  //           // })
-  //           return <LocationCard data={resp.lmao} location={location}></LocationCard>
-  //         }
-
-  //       // console.log(data)
-  //       // return <LocationCard data={data} location={location}></LocationCard>
-  //       // debugger
-  //     });
-
-  //     debugger
-
-  //     // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
-  // }
-    // return Promise.all(promises)
-    // console.log(promises)
-  
 
   selectLocation = (e) => {
     this.setState({ selected: e.target.value });
@@ -126,23 +89,14 @@ class Home extends Component {
   };
 
   componentDidMount() {
-    // this.showLocations();
-    // this.mounted = true;
 
-    // if (this.mounted){
       this.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.selected);
       this.setState({
         user_locations: this.props.user_locations
       });
-    // }
-
-    // console.log('props', this.props.user_locations)
-    // console.log('state', this.state.user_locations)
   }
 
-  // componentWillUnmount() {
-  //   this.mounted = false;
-  // }
+
 
   render() {
     return (
@@ -150,35 +104,18 @@ class Home extends Component {
         <div className='Fix-nav'>
           <Nav fetchSelectedForecast={this.fetchSelectedForecast} handleLogout={this.props.handleLogout}/>
         </div>
-        {/* <h1 className="text-white"> WeatherNow </h1> */}
         <br></br>
         <div className='Top'>
           <Row>
-              <Col>
-                {/* <CurrentContainer
-                  current={this.state.current}
-                  selected={this.state.selected}
-                /> */}
+              <Col xs={8}>
                 <CurrentCard current={this.state.current}
                               selected={this.state.selected}
                 >
                 </CurrentCard>
                 <br></br>
               </Col>
-          {/* {this.state.user_locations.length > 0 ? 
-          <Col>
-            <UserLocations
-            showLocations={this.showLocations}
-            user_locations={this.state.user_locations}
-            selectLocation={this.selectLocation2}
-            stateData={this.state}
-            deleteUserLocation={this.deleteUserLocation}
-            />
-          </Col> :
-          null
-          } */}
                 {this.props.user_locations.length > 0 ?
-                <Col>
+                <Col xs={4}>
                   <div className="Saved-table">
                     <SavedLocationsContainer user_locations={this.props.user_locations}></SavedLocationsContainer>
                   </div>
@@ -188,9 +125,7 @@ class Home extends Component {
           </Row>
         </div>
         <div className="tbd">
-          {/* <TableContainer> */}
             {<WeeklyContainer daily={this.state.daily} />}
-          {/* </TableContainer> */}
         </div>
       </div>
     );

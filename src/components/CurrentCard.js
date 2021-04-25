@@ -11,8 +11,9 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: '100%',
+    width: '80%',
     margin: 'auto',
+    marginLeft: '15%',
     borderRadius: 12,
     padding: 12,
     background: 'linear-gradient(#ffb514, #ff8503)',
