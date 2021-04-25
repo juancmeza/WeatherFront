@@ -19,7 +19,6 @@ fetchUserLocations = (locations) => {
       .then((data) => {
         if (data.status !== 400 && data.status !== 500 && data){
           data.lmao['location'] = location
-          debugger
           this.setState({
             savedLocationsData: [...this.state.savedLocationsData, data.lmao],
           })

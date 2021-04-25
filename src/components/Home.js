@@ -107,7 +107,7 @@ class Home extends Component {
         <br></br>
         <div className='Top'>
           <Row>
-              <Col xs={8}>
+              <Col>
                 <CurrentCard current={this.state.current}
                               selected={this.state.selected}
                 >
@@ -115,7 +115,7 @@ class Home extends Component {
                 <br></br>
               </Col>
                 {this.props.user_locations.length > 0 ?
-                <Col xs={4}>
+                <Col>
                   <div className="Saved-table">
                     <SavedLocationsContainer user_locations={this.props.user_locations}></SavedLocationsContainer>
                   </div>

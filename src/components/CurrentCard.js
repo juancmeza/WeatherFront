@@ -14,6 +14,7 @@ const useStyles = makeStyles(() => ({
     width: '80%',
     margin: 'auto',
     marginLeft: '15%',
+    // justifyContent: 'right',
     borderRadius: 12,
     padding: 12,
     background: 'linear-gradient(#ffb514, #ff8503)',
