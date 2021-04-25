@@ -244,9 +244,9 @@ html {
 
 .Saved-table {
   width: 310px;
-  height: 375px;
+  /* height: 375px; */
   border-radius: 10px;
   box-shadow: 0 5px 10px rgb(42, 41, 41);
-  background: linear-gradient(#ff8503, #ffb514);
+  background: linear-gradient(to right, #014e6f, #0d7d8e);
   margin: auto;
 }

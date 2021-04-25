@@ -11,7 +11,7 @@ import Divider from '@material-ui/core/Divider';
 
 const useStyles = makeStyles(() => ({
   root: {
-    width: 310,
+    width: '100%',
     margin: 'auto',
     borderRadius: 12,
     padding: 12,

@@ -2,7 +2,8 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
-import Add from '@material-ui/icons/Add';
+import CallMadeIcon from '@material-ui/icons/CallMade';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 import { Row, Item } from '@mui-treasury/components/flex';
 import { Info, InfoTitle, InfoSubtitle } from '@mui-treasury/components/info';
 import { useTutorInfoStyles } from '@mui-treasury/styles/info/tutor';
@@ -18,6 +19,13 @@ const useStyles = makeStyles(() => ({
       color: '#000',
     },
   },
+  temp: {
+    color: '#fff',
+    fontSize: 14,
+  },
+  city: {
+    color: '#fff',
+  }
 }));
 
 export const LocationCard = React.memo(function TutorCard({data}) {
@@ -26,7 +34,7 @@ export const LocationCard = React.memo(function TutorCard({data}) {
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
   // debugger
   return (
-    <Row p={1.5} gap={2} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16}>
+    <Row p={1.5} gap={1} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16}>
       <Item>
         <Avatar
           classes={avatarStyles}
@@ -36,15 +44,15 @@ export const LocationCard = React.memo(function TutorCard({data}) {
         />
       </Item>
       <Info position={'middle'} useStyles={useTutorInfoStyles}>
-        <InfoTitle>{data.location.city}</InfoTitle>
-        <InfoSubtitle>{data.current.temp}</InfoSubtitle>
+        <InfoTitle className={styles.city}>{data.location.city}</InfoTitle>
+        <InfoSubtitle className={styles.temp}>Temp: {Math.round(data.current.temp)}° F</InfoSubtitle>
       </Info>
       <Item ml={1} position={'middle'}>
         <IconButton className={styles.action} classes={iconBtnStyles}>
-          <Add />
+          <CallMadeIcon />
         </IconButton>
         <IconButton className={styles.action} classes={iconBtnStyles}>
-          <Add />
+          <DeleteForeverOutlinedIcon />
         </IconButton>
       </Item>
     </Row>

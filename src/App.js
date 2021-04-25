@@ -46,7 +46,7 @@ class App extends Component {
         .then((res) => res.json())
         .then((user) =>
           this.setState({
-            user: user, user_locations: user.user_locations
+            user: user, user_locations: user.user_locations, logged: true,
           })
         );
     }
