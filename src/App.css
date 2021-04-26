@@ -118,6 +118,11 @@ nav {
   background-color: rgb(194, 149, 0);
 }
 
+.Current-Column {
+  width: 80%;
+  justify-items: flex-end;
+}
+
 .Current-Weather {
   /* background-image: url("http://openweathermap.org/img/wn/02d@2x.png");
   background-repeat: no-repeat, repeat; */

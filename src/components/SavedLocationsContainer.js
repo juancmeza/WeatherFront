@@ -31,7 +31,7 @@ fetchUserLocations = (locations) => {
 }
 renderUserLocations = () => {
     return this.state.savedLocationsData.map(locationData => {
-      return <LocationCard data={locationData}></LocationCard>
+      return <LocationCard data={locationData} updateSelectedCity={this.props.updateSelectedCity}></LocationCard>
 
     })
   }

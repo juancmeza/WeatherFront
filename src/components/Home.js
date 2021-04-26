@@ -58,6 +58,14 @@ class Home extends Component {
       });
   };
 
+  updateSelectedCity = (current, daily, city) => {
+    this.setState({
+      current: current,
+      daiy: daily,
+      selected: city
+    })
+  }
+
   submitName = (e, name) => {
     e.preventDefault();
     this.fetchSelectedForecast(name);
@@ -108,16 +116,18 @@ class Home extends Component {
         <div className='Top'>
           <Row>
               <Col>
+              <div className='Current-column'>
                 <CurrentCard current={this.state.current}
                               selected={this.state.selected}
                 >
                 </CurrentCard>
                 <br></br>
+              </div>
               </Col>
                 {this.props.user_locations.length > 0 ?
                 <Col>
                   <div className="Saved-table">
-                    <SavedLocationsContainer user_locations={this.props.user_locations}></SavedLocationsContainer>
+                    <SavedLocationsContainer user_locations={this.props.user_locations} updateSelectedCity={this.updateSelectedCity}></SavedLocationsContainer>
                   </div>
                 </Col> : 
                 null
