@@ -26,7 +26,7 @@
   top: 10;
   height: 4vmin;
   pointer-events: none;
-  color: rgb(255, 116, 3);
+  color: #ff7403;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -119,7 +119,7 @@ nav {
 }
 
 .Current-Column {
-  width: 80%;
+  /* width: 20%; */
   justify-items: flex-end;
 }
 

@@ -8,24 +8,39 @@ import { useOverShadowStyles } from '@mui-treasury/styles/shadow/over';
 import Avatar from '@material-ui/core/Avatar';
 import Box from '@material-ui/core/Box';
 import Divider from '@material-ui/core/Divider';
+import LibraryAddOutlinedIcon from '@material-ui/icons/LibraryAddOutlined';
+import IconButton from '@material-ui/core/IconButton';
+import { Row, Item } from '@mui-treasury/components/flex';
+
+
 
 const useStyles = makeStyles(() => ({
   root: {
     width: '80%',
     margin: 'auto',
-    marginLeft: '15%',
+    marginLeft: '21%',
     // justifyContent: 'right',
     borderRadius: 12,
     padding: 12,
-    background: 'linear-gradient(#ffb514, #ff8503)',
+    background: 'linear-gradient(#ff8503, #ffb514)',
     color: 'rgb(255,255,255)',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
+  },
+  action: {
+    backgroundColor: '#ffb514',
+    marginBottom: -100,
+    marginTop: -80,
+    boxShadow: '0 1px 4px 0 rgba(0,0,0,0.12)',
+    '&:hover': {
+      backgroundColor: '#fff',
+      color: '#000',
+    },
   },
   avatar: {
     width: 125,
     height: 125,
     margin: 'auto',
-    marginTop: -20,
+    marginTop: -40,
     marginBottom: -40,
   },
   info: {
@@ -48,6 +63,13 @@ export const CurrentCard = React.memo(function MusicCard({current, selected}) {
   const shadowStyles = useOverShadowStyles({ inactive: true });
   return (
     <Card className={cx(styles.root, shadowStyles.root)}>
+      <Row>
+        <Item position={'right'}>
+          <IconButton className={styles.action}>
+            <LibraryAddOutlinedIcon></LibraryAddOutlinedIcon>
+          </IconButton>
+        </Item>
+      </Row>
       <Avatar className={styles.avatar} src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`} />
       <CardContent>
         <Box className={styles.box}>
