@@ -82,10 +82,12 @@ class Home extends Component {
 
   addToUserLocations = (city, latitude, longitude, id) => {
     let newUserLocation = {
-      city: city,
-      latitude: latitude,
-      longitude: longitude,
-      user_id: id,
+      user_ocation: {
+        city: city,
+        latitude: latitude,
+        longitude: longitude,
+        user_id: id,
+      }
     };
     this.setState({
       user_locations: [...this.state.user_locations, newUserLocation],
