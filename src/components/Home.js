@@ -53,16 +53,24 @@ class Home extends Component {
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 400 && data.status !== 500 && data){
-          this.setState({ current: data.lmao.current, daily: data.lmao.daily, selected: name });
+          this.setState({ 
+            current: data.lmao.current, 
+            daily: data.lmao.daily, 
+            selected: name,
+            latitude: latitude,
+            longitude: longitude,
+           });
         }
       });
   };
 
-  updateSelectedCity = (current, daily, city) => {
+  updateSelectedCity = (current, daily, city, latitude, longitude) => {
     this.setState({
       current: current,
-      daiy: daily,
-      selected: city
+      daily: daily,
+      selected: city,
+      latitude: latitude,
+      longitude: longitude,
     })
   }
 
@@ -72,15 +80,15 @@ class Home extends Component {
     console.log(name);
   };
 
-  addToUserLocation = (e, location) => {
-    console.log(location);
+  addToUserLocations = (city, latitude, longitude, id) => {
     let newUserLocation = {
-      default: false,
-      user_id: this.props.user.id,
-      location_id: location.id,
+      city: city,
+      latitude: latitude,
+      longitude: longitude,
+      user_id: id,
     };
     this.setState({
-      user_locations: [...this.state.user_locations, location],
+      user_locations: [...this.state.user_locations, newUserLocation],
     });
 
     fetch("http://localhost:3000/user_locations", {
@@ -119,6 +127,10 @@ class Home extends Component {
               <div className='Current-column'>
                 <CurrentCard current={this.state.current}
                               selected={this.state.selected}
+                              latitude={this.state.latitude}
+                              longitude={this.state.longitude}
+                              user_id={this.props.user.id}
+                              addToUserLocations={this.addToUserLocations}
                 >
                 </CurrentCard>
                 <br></br>

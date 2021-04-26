@@ -57,7 +57,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export const CurrentCard = React.memo(function MusicCard({current, selected}) {
+export const CurrentCard = React.memo(function MusicCard({current, selected, latitude, longitude, user_id, addToUserLocations}) {
   const styles = useStyles();
   const textCardContentStyles = useN04TextInfoContentStyles();
   const shadowStyles = useOverShadowStyles({ inactive: true });
@@ -66,7 +66,7 @@ export const CurrentCard = React.memo(function MusicCard({current, selected}) {
       <Row>
         <Item position={'right'}>
           <IconButton className={styles.action}>
-            <LibraryAddOutlinedIcon></LibraryAddOutlinedIcon>
+            <LibraryAddOutlinedIcon onClick={() => addToUserLocations(selected, latitude, longitude, user_id)}></LibraryAddOutlinedIcon>
           </IconButton>
         </Item>
       </Row>

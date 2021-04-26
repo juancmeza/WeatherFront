@@ -49,7 +49,7 @@ export const LocationCard = React.memo(function TutorCard({data, updateSelectedC
       </Info>
       <Item ml={1} position={'middle'}>
         <IconButton className={styles.action} classes={iconBtnStyles}>
-          <CallMadeIcon onClick={() => updateSelectedCity(data.current, data.daily, data.location.city)}/>
+          <CallMadeIcon onClick={() => updateSelectedCity(data.current, data.daily, data.location.city, data.location.latitude, data.location.longitude)}/>
         </IconButton>
         <IconButton className={styles.action} classes={iconBtnStyles}>
           <DeleteForeverOutlinedIcon />
