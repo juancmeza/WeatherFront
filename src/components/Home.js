@@ -89,9 +89,6 @@ class Home extends Component {
         user_id: id,
       }
     };
-    this.setState({
-      user_locations: [...this.state.user_locations, newUserLocation],
-    });
 
     fetch("http://localhost:3000/user_locations", {
       method: "POST",
@@ -102,8 +99,9 @@ class Home extends Component {
     })
       .then((res) => res.json())
       .then((userloc) => {
-        console.log(userloc);
-      });
+        this.setState({
+          user_locations: [...this.state.user_locations, userloc],
+        });      });
   };
 
   componentDidMount() {
