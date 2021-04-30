@@ -39,6 +39,7 @@ class App extends Component {
       logged: true,
     });
   };
+
   componentDidMount() {
     let userSession = sessionStorage.getItem("userId");
     if (userSession) {
@@ -68,7 +69,7 @@ class App extends Component {
               exact
               path="/Home"
               render={() => {
-                return this.state.logged ? <Home user={this.state.user} user_locations={this.state.user_locations} handleLogout={this.handleLogout}/> :
+                return this.state.logged ? <Home user={this.state.user} user_locations={this.state.user_locations} handleLogout={this.handleLogout} addToUserLocations={this.addToUserLocations}/> :
                   <UserContainer getUser={this.getUser} />;
               }}
             />

@@ -64,25 +64,9 @@ class Home extends Component {
       });
   };
 
-  updateSelectedCity = (current, daily, city, latitude, longitude) => {
-    this.setState({
-      current: current,
-      daily: daily,
-      selected: city,
-      latitude: latitude,
-      longitude: longitude,
-    })
-  }
-
-  submitName = (e, name) => {
-    e.preventDefault();
-    this.fetchSelectedForecast(name);
-    console.log(name);
-  };
-
   addToUserLocations = (city, latitude, longitude, id) => {
     let newUserLocation = {
-      user_ocation: {
+      user_location: {
         city: city,
         latitude: latitude,
         longitude: longitude,
@@ -101,8 +85,29 @@ class Home extends Component {
       .then((userloc) => {
         this.setState({
           user_locations: [...this.state.user_locations, userloc],
-        });      });
+        });      
+      });
   };
+
+  updateSelectedCity = (current, daily, city, latitude, longitude) => {
+    this.setState({
+      current: current,
+      daily: daily,
+      selected: city,
+      latitude: latitude,
+      longitude: longitude,
+    })
+  }
+
+  submitName = (e, name) => {
+    e.preventDefault();
+    this.fetchSelectedForecast(name);
+    console.log(name);
+  };
+
+  // renderSavedLocations = (locations) => {
+  //   return <SavedLocationsContainer user_locations={locations} updateSelectedCity={this.updateSelectedCity}></SavedLocationsContainer>
+  // }
 
   componentDidMount() {
 
@@ -111,7 +116,6 @@ class Home extends Component {
         user_locations: this.props.user_locations
       });
   }
-
 
 
   render() {
@@ -136,10 +140,10 @@ class Home extends Component {
                 <br></br>
               </div>
               </Col>
-                {this.props.user_locations.length > 0 ?
+                {this.state.user_locations.length > 0 ?
                 <Col>
                   <div className="Saved-table">
-                    <SavedLocationsContainer user_locations={this.props.user_locations} updateSelectedCity={this.updateSelectedCity}></SavedLocationsContainer>
+                  <SavedLocationsContainer user_locations={this.state.user_locations} updateSelectedCity={this.updateSelectedCity}></SavedLocationsContainer>
                   </div>
                 </Col> : 
                 null
