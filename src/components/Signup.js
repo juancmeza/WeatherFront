@@ -101,7 +101,7 @@ class Signup extends Component {
                 className="btn btn-outline-light btn-block"
                 onClick={this.props.toggleButton}
               >
-                Click here to sign in
+                Sign in
               </button>
               {this.state.redirect ? <Redirect to="/Home" /> : null}
             </div>

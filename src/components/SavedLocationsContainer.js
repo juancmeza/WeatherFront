@@ -10,6 +10,12 @@ class SavedLocationsContainer extends React.Component {
   componentDidMount() {
     this.fetchUserLocations(this.props.user_locations);
   }
+  
+  componentDidUpdate(prevProps) {
+    if (prevProps.user_locations !== this.props.user_locations) {
+      this.fetchUserLocations([this.props.user_locations.pop()]);
+    }
+  }
 
 
 fetchUserLocations = (locations) => {
@@ -24,9 +30,6 @@ fetchUserLocations = (locations) => {
           })
         }
       })
-    // console.log(data)
-    // return <LocationCard data={data} location={location}></LocationCard>
-    // debugger
   });
 }
 renderUserLocations = () => {
@@ -35,8 +38,6 @@ renderUserLocations = () => {
 
     })
   }
-//   // return <LocationCard data={this.state.savedLocationData} location={this.state.savedLocation}></LocationCard>
-// }
 
   render () {
     return (
