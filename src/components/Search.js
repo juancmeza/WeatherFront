@@ -62,6 +62,7 @@ class Search extends Component {
     this.props.fetchSelectedForecast(this.state.latitude, this.state.longitude, this.state.city)
   }
 
+
   render() {
     return (
       <div>
@@ -69,7 +70,7 @@ class Search extends Component {
           url="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
           onLoad={this.handleScriptLoad}
         />
-      
+        
         <div>
           <SearchBar className='Search-bar' id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
             style={{
