@@ -12,7 +12,9 @@ import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 
 const useStyles = makeStyles(() => ({
   action: {
-    marginRight: 20,
+    position: 'right',
+    justifyContent: 'right',
+    justifyItems: 'right',
     backgroundColor: '#ffb514',
     boxShadow: '0 1px 4px 0 rgba(0,0,0,0.12)',
     '&:hover': {
@@ -49,7 +51,7 @@ export const LocationCard = React.memo(function TutorCard({data, updateSelectedC
         <InfoSubtitle className={styles.temp}>Temp: {Math.round(data.current.temp)}° F</InfoSubtitle>
       </Info>
       <Item ml={1} position={'right'}>
-        <IconButton className={styles.action} classes={iconBtnStyles}>
+        <IconButton className={styles.action} classes={iconBtnStyles} position={'right'}>
           <CallMadeIcon onClick={() => updateSelectedCity(data.current, data.daily, data.location.city, data.location.latitude, data.location.longitude)}/>
         </IconButton>
         <IconButton className={styles.action} classes={iconBtnStyles}>
