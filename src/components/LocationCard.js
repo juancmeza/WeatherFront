@@ -10,7 +10,10 @@ import { useTutorInfoStyles } from '@mui-treasury/styles/info/tutor';
 import { useSizedIconButtonStyles } from '@mui-treasury/styles/iconButton/sized';
 import { useDynamicAvatarStyles } from '@mui-treasury/styles/avatar/dynamic';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
+  row: {
+    marginLeft: theme.spacing(0.25),
+  },
   action: {
     backgroundColor: '#ffb514',
     boxShadow: '0 1px 4px 0 rgba(0,0,0,0.12)',
@@ -34,7 +37,7 @@ export const LocationCard = React.memo(function TutorCard({data, updateSelectedC
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
   // debugger
   return (
-    <Row p={1.5} gap={1} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16}>
+    <Row p={1.5} gap={1} bgcolor={'linear-gradient(#ffb514, #ff8503)'} borderRadius={16} className={styles.row}>
       <Item>
         <Avatar
           classes={avatarStyles}

@@ -14,12 +14,18 @@ import { Row, Item } from '@mui-treasury/components/flex';
 
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    width: '80%',
+    width: '85%',
     margin: 'auto',
-    marginLeft: '21%',
-    // justifyContent: 'right',
+    [theme.breakpoints.up('sm')]: {
+      width: '60%',
+      marginRight: theme.spacing(2),
+    },
+    // [theme.breakpoints.up('md')]: {
+    //   width: '70%',
+    //   marginRight: theme.spacing(1),    
+    // },
     borderRadius: 12,
     padding: 12,
     background: 'linear-gradient(#ff8503, #ffb514)',

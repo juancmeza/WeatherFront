@@ -120,7 +120,7 @@ nav {
 
 .Current-Column {
   /* width: 20%; */
-  justify-items: flex-end;
+  /* justify-items: flex-end; */
 }
 
 .Current-Weather {
@@ -253,5 +253,6 @@ html {
   border-radius: 10px;
   box-shadow: 0 5px 10px rgb(42, 41, 41);
   background: linear-gradient(to right, #014e6f, #0d7d8e);
-  margin: auto;
+  margin-left: 15%;
+  /* padding-left: 25%; */
 }

@@ -41,7 +41,7 @@ renderUserLocations = () => {
 
   render () {
     return (
-      <div>
+      <div className="Saved-locations">
           {this.renderUserLocations()}
       </div>
     )
