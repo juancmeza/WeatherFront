@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   },
   action: {
     backgroundColor: '#ffb514',
+    color: '#fff',
     marginBottom: -100,
     marginTop: -80,
     boxShadow: '0 1px 4px 0 rgba(0,0,0,0.12)',

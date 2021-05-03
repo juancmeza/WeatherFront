@@ -143,7 +143,15 @@ class Home extends Component {
                 {this.state.user_locations.length > 0 ?
                 <Col>
                   <div className="Saved-table">
-                  <SavedLocationsContainer user_locations={this.state.user_locations} updateSelectedCity={this.updateSelectedCity}></SavedLocationsContainer>
+                    <SavedLocationsContainer user_locations={this.state.user_locations} 
+                                             updateSelectedCity={this.updateSelectedCity}
+                                             current={this.state.current}
+                                             daily={this.state.daily}
+                                             latitude={this.state.latitude}
+                                             longitude={this.state.longitude}
+                                             selected={this.state.selected}
+                    >
+                    </SavedLocationsContainer>
                   </div>
                 </Col> : 
                 null
