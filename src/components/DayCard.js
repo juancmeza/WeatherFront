@@ -13,7 +13,7 @@ import { useGutterBorderedGridStyles } from '@mui-treasury/styles/grid/gutterBor
 const useStyles = makeStyles(({ palette }) => ({
   card: {
     borderRadius: 12,
-    width: 155,
+    width: 150,
     textAlign: 'center',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
     background: 'linear-gradient(#ffb514, #ff8503)',

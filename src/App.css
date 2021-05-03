@@ -73,7 +73,8 @@
 
   .Search-bar {
     max-width: 275px;
-    left: 60px;
+    /* left: 60px; */
+    /* position: fixed; */
   }
 
   .App-logo {
@@ -111,16 +112,13 @@ nav {
 }
 
 .Search-bar {
+  position: relative;
   width: 350px;
+  /* left: -28%; */
 }
 
 .Logout:hover {
   background-color: rgb(194, 149, 0);
-}
-
-.Current-Column {
-  /* width: 20%; */
-  /* justify-items: flex-end; */
 }
 
 .Current-Weather {
@@ -239,14 +237,6 @@ html {
   background-color: white;
 }
 
-.DayCard {
-  height: 200px;
-  width: 125px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgb(42, 41, 41);
-  padding: 10px;
-}
-
 .Saved-table {
   width: 310px;
   /* height: 375px; */
@@ -255,4 +245,10 @@ html {
   background: linear-gradient(to right, #014e6f, #0d7d8e);
   margin-left: 15%;
   /* padding-left: 25%; */
+}
+
+@media screen and (max-width: 768px) {
+  .Saved-table {
+    margin: auto;
+  }
 }
