@@ -38,8 +38,17 @@ class SavedLocationsContainer extends React.Component {
     const {current, daily, latitude, longitude, selected} = this.props
     
     const newLocation = {
-      current: current
+      current: current,
+      daily: daily,
+      latitude: latitude,
+      longitude: longitude,
+      selected: selected,
     }
+
+    this.setState({
+      savedLocationsData: [...this.state.savedLocationsData, newLocation],
+    })
+
   }
 
   renderUserLocations = () => {
