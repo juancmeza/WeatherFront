@@ -15,17 +15,30 @@ import { Row, Item } from '@mui-treasury/components/flex';
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  true: {
     width: '85%',
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
       width: '60%',
       marginRight: theme.spacing(2),
     },
+    
     // [theme.breakpoints.up('md')]: {
     //   width: '70%',
     //   marginRight: theme.spacing(1),    
     // },
+    borderRadius: 12,
+    padding: 12,
+    background: 'linear-gradient(#ff8503, #ffb514)',
+    color: 'rgb(255,255,255)',
+    boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
+  },
+  false: {
+    width: '85%',
+    margin: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      width: '35%',
+    },
     borderRadius: 12,
     padding: 12,
     background: 'linear-gradient(#ff8503, #ffb514)',
@@ -64,12 +77,48 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const CurrentCard = React.memo(function MusicCard({current, selected, latitude, longitude, user_id, addToUserLocations}) {
+export const CurrentCard = React.memo(function MusicCard({current, selected, latitude, longitude, user_id, addToUserLocations, hasSavedLocations}) {
   const styles = useStyles();
   const textCardContentStyles = useN04TextInfoContentStyles();
   const shadowStyles = useOverShadowStyles({ inactive: true });
+  console.log(hasSavedLocations)
   return (
-    <Card className={cx(styles.root, shadowStyles.root)}>
+    hasSavedLocations ? 
+    <Card className={cx(styles.true, shadowStyles.root)}>
+      <Row>
+        <Item position={'right'}>
+          <IconButton className={styles.action}>
+            <LibraryAddOutlinedIcon onClick={() => addToUserLocations(selected, latitude, longitude, user_id)}></LibraryAddOutlinedIcon>
+          </IconButton>
+        </Item>
+      </Row>
+      <Avatar className={styles.avatar} src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`} />
+      <CardContent>
+        <Box className={styles.box}>
+          <h2>
+            {selected}
+          </h2>
+          <Divider light />
+          <p className={styles.info2}>
+            {current.weather[0].description}
+          </p>
+          <p className={styles.info}>
+            Temp: {Math.round(current.temp)}° F
+          </p>
+          <p className={styles.info}>
+            Feels Like: {Math.round(current.feels_like)}° F
+          </p>
+          <p className={styles.info}>
+            Humidity: {current.humidity}%
+          </p>
+          <p className={styles.info}>
+            Wind: {Math.round(current.wind_speed)} mph
+          </p>
+        </Box>
+      </CardContent>
+    </Card> 
+    :
+    <Card className={cx(styles.false, shadowStyles.root)}>
       <Row>
         <Item position={'right'}>
           <IconButton className={styles.action}>

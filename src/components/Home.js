@@ -135,6 +135,7 @@ class Home extends Component {
                               longitude={this.state.longitude}
                               user_id={this.props.user.id}
                               addToUserLocations={this.addToUserLocations}
+                              hasSavedLocations={this.state.user_locations > 0}
                 >
                 </CurrentCard>
                 <br></br>

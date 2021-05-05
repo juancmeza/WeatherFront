@@ -13,7 +13,7 @@ class SavedLocationsContainer extends React.Component {
   
   componentDidUpdate(prevProps) {
     if (prevProps.user_locations !== this.props.user_locations) {
-      this.fetchUserLocations([this.props.user_locations.pop()]);
+      this.addNewLocationData();
     }
   }
 
