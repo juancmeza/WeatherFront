@@ -15,29 +15,29 @@ import { Row, Item } from '@mui-treasury/components/flex';
 
 
 const useStyles = makeStyles((theme) => ({
-  true: {
-    width: '85%',
-    margin: 'auto',
-    [theme.breakpoints.up('sm')]: {
-      width: '60%',
-      marginRight: theme.spacing(2),
-    },
+  // true: {
+  //   width: '85%',
+  //   margin: 'auto',
+  //   [theme.breakpoints.up('sm')]: {
+  //     width: '10%',
+  //     marginRight: theme.spacing(2),
+  //   },
     
-    // [theme.breakpoints.up('md')]: {
-    //   width: '70%',
-    //   marginRight: theme.spacing(1),    
-    // },
-    borderRadius: 12,
-    padding: 12,
-    background: 'linear-gradient(#ff8503, #ffb514)',
-    color: 'rgb(255,255,255)',
-    boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
-  },
+  //   [theme.breakpoints.up('md')]: {
+  //     width: '70%',
+  //     marginRight: theme.spacing(1),    
+  //   },
+  //   borderRadius: 12,
+  //   padding: 12,
+  //   background: 'linear-gradient(#ff8503, #ffb514)',
+  //   color: 'rgb(255,255,255)',
+  //   boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
+  // },
   false: {
     width: '85%',
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
-      width: '35%',
+      width: '45%',
     },
     borderRadius: 12,
     padding: 12,
