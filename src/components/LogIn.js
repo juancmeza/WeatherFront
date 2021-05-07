@@ -40,6 +40,8 @@ class LogIn extends Component {
           logged: true,
         });
       })
+    .catch((message) => alert("Invalid username or password"));
+
   };
 
   render() {
