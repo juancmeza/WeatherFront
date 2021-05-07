@@ -4,7 +4,6 @@ import Nav from "../Nav";
 import "../App.css";
 import { Row, Col, Button} from "react-bootstrap"
 import CurrentCard from './CurrentCard.js'
-import LocationCard from './LocationCard.js'
 import SavedLocationsContainer from "./SavedLocationsContainer.js";
 
 
@@ -135,6 +134,7 @@ class Home extends Component {
                               longitude={this.state.longitude}
                               user_id={this.props.user.id}
                               addToUserLocations={this.addToUserLocations}
+                              // deleteUserLocation={this.deleteUserLocation}
                               hasSavedLocations={this.state.user_locations > 0}
                 >
                 </CurrentCard>
@@ -151,6 +151,7 @@ class Home extends Component {
                                              latitude={this.state.latitude}
                                              longitude={this.state.longitude}
                                              selected={this.state.selected}
+                                             deleteUserLocation={this.deleteUserLocation}      
                     >
                     </SavedLocationsContainer>
                   </div>

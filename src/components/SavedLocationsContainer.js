@@ -34,12 +34,12 @@ class SavedLocationsContainer extends React.Component {
   }
 
   addNewLocationData = () => {
-    const {current, daily, latitude, longitude, selected} = this.props
+    const {current, daily, latitude, longitude, selected, id} = this.props
     
     const newLocation = {
       current: current,
       daily: daily,
-      location: {city: selected, latitude: latitude, longitude: longitude}
+      location: {city: selected, id: id, latitude: latitude, longitude: longitude}
     }
 
     this.setState({
@@ -50,7 +50,7 @@ class SavedLocationsContainer extends React.Component {
 
   renderUserLocations = (locations) => {
     return locations.map(locationData => {
-      return <LocationCard data={locationData} updateSelectedCity={this.props.updateSelectedCity}></LocationCard>
+      return <LocationCard data={locationData} updateSelectedCity={this.props.updateSelectedCity} deleteUserLocation={this.props.deleteUserLocation}></LocationCard>
 
     })
   }

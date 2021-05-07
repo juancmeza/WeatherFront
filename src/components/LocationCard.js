@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const LocationCard = React.memo(function TutorCard({data, updateSelectedCity}) {
+export const LocationCard = React.memo(function TutorCard({data, updateSelectedCity, deleteUserLocation}) {
   const styles = useStyles();
   const iconBtnStyles = useSizedIconButtonStyles({ padding: 6 });
   const avatarStyles = useDynamicAvatarStyles({ radius: 12, size: 48 });
@@ -55,7 +55,7 @@ export const LocationCard = React.memo(function TutorCard({data, updateSelectedC
           <CallMadeIcon onClick={() => updateSelectedCity(data.current, data.daily, data.location.city, data.location.latitude, data.location.longitude)}/>
         </IconButton>
         <IconButton className={styles.action} classes={iconBtnStyles}>
-          <DeleteForeverOutlinedIcon />
+          <DeleteForeverOutlinedIcon onClick={() => deleteUserLocation(data.location)}/>
         </IconButton>
       </Item>
     </Row>
