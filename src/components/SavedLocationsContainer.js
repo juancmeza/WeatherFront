@@ -18,7 +18,6 @@ class SavedLocationsContainer extends React.Component {
   }
 
 
-
   fetchUserLocations = (locations) => {
     locations.map((location) => {
         fetch(`http://localhost:3000/locations/?latitude=${location.latitude}&longitude=${location.longitude}`)
@@ -40,9 +39,7 @@ class SavedLocationsContainer extends React.Component {
     const newLocation = {
       current: current,
       daily: daily,
-      latitude: latitude,
-      longitude: longitude,
-      selected: selected,
+      location: {city: selected, latitude: latitude, longitude: longitude}
     }
 
     this.setState({
@@ -51,8 +48,8 @@ class SavedLocationsContainer extends React.Component {
 
   }
 
-  renderUserLocations = () => {
-    return this.state.savedLocationsData.map(locationData => {
+  renderUserLocations = (locations) => {
+    return locations.map(locationData => {
       return <LocationCard data={locationData} updateSelectedCity={this.props.updateSelectedCity}></LocationCard>
 
     })
@@ -61,7 +58,7 @@ class SavedLocationsContainer extends React.Component {
   render () {
     return (
       <div className="Saved-locations">
-          {this.renderUserLocations()}
+          {this.renderUserLocations(this.state.savedLocationsData)}
       </div>
     )
   }
