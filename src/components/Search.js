@@ -3,11 +3,9 @@ import Script from 'react-load-script';
 import SearchBar from 'material-ui-search-bar';
 
 class Search extends Component {
-  // Define Constructor
   constructor(props) {
     super(props);
 
-    // Declare State
     this.state = {
       city: '',
       query: '',
@@ -67,7 +65,7 @@ class Search extends Component {
     return (
       <div>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA7OuecDEI8LxsRnNXnV2dj5DShnkN-mI&libraries=places"
           onLoad={this.handleScriptLoad}
         />
         

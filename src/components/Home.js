@@ -19,6 +19,7 @@ class Home extends Component {
     longitude: -122.4194155,
     savedLocationData: '',
     savedLocation: '',
+    locationToDelete: {},
   };
 
   deleteUserLocation = (location) => {
@@ -33,19 +34,6 @@ class Home extends Component {
     );
   };
 
-
-  selectLocation = (e) => {
-    this.setState({ selected: e.target.value });
-    // return e.target.value;
-  };
-
-  selectLocation2 = (name) => {
-    console.log(name);
-    this.setState({
-      selected: name,
-    });
-    this.fetchSelectedForecast(name);
-  };
 
   fetchSelectedForecast = (latitude, longitude, name) => {
     fetch(`http://localhost:3000/locations/?latitude=${latitude}&longitude=${longitude}`)
@@ -151,7 +139,8 @@ class Home extends Component {
                                              latitude={this.state.latitude}
                                              longitude={this.state.longitude}
                                              selected={this.state.selected}
-                                             deleteUserLocation={this.deleteUserLocation}      
+                                             deleteUserLocation={this.deleteUserLocation}
+                                             locationToDelete={this.state.locationToDelete}      
                     >
                     </SavedLocationsContainer>
                   </div>
