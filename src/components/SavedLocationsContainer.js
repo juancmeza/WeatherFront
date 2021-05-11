@@ -11,9 +11,15 @@ class SavedLocationsContainer extends React.Component {
     this.fetchUserLocations(this.props.user_locations);
   }
   
-  componentDidUpdate(prevProps) {
-    if (prevProps.user_locations.length < this.props.user_locations.length) {
-      this.addNewLocationData();
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user_locations !== this.props.user_locations) {
+      if (prevProps.user_locations.length < this.props.user_locations.length){
+        this.addNewLocationData();
+      }
+      else if (prevProps.locationToDelete !== this.props.locationToDelete){
+        
+        this.removeFromSavedLocations(this.props.locationToDelete)
+      }
     }
   }
 
@@ -49,17 +55,16 @@ class SavedLocationsContainer extends React.Component {
   }
 
   removeFromSavedLocations = (location) => {
-    this.props.deleteUserLocation(location)
     this.setState({
       savedLocationsData: [...this.state.savedLocationsData].filter(
-        (loc) => loc.id !== location.id
+        loc => loc.location.id !== location.id
       )
     })
   }
 
   renderUserLocations = (locations) => {
     return locations.map(locationData => {
-      return <LocationCard data={locationData} updateSelectedCity={this.props.updateSelectedCity} removeFromSavedLocations={this.removeFromSavedLocations}></LocationCard>
+      return <LocationCard data={locationData} updateSelectedCity={this.props.updateSelectedCity} deleteUserLocation={this.props.deleteUserLocation}></LocationCard>
 
     })
   }

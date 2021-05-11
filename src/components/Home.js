@@ -27,6 +27,7 @@ class Home extends Component {
       method: "DELETE",
     }).then(() =>
       this.setState({
+        locationToDelete: location,
         user_locations: [...this.state.user_locations].filter(
           (loc) => loc.id !== location.id
         ),
@@ -91,10 +92,6 @@ class Home extends Component {
     this.fetchSelectedForecast(name);
     console.log(name);
   };
-
-  // renderSavedLocations = (locations) => {
-  //   return <SavedLocationsContainer user_locations={locations} updateSelectedCity={this.updateSelectedCity}></SavedLocationsContainer>
-  // }
 
   componentDidMount() {
 
