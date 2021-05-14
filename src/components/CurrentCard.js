@@ -77,12 +77,21 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export const CurrentCard = React.memo(function MusicCard({current, selected, latitude, longitude, user_id, addToUserLocations, hasSavedLocations}) {
+export const CurrentCard = React.memo(function MusicCard({current, selected, latitude, longitude, user_id, addToUserLocations, user_locations}) {
   const styles = useStyles();
   const shadowStyles = useOverShadowStyles({ inactive: true });
-  console.log(hasSavedLocations)
+
+  const alreadyInUserLocations = (locations) => {
+    locations.map(loc => {
+      if (loc.latitude === latitude && loc.longitude === longitude) {
+        return true
+      }
+    })
+  }
+
+  console.log(user_locations)
   return (
-    hasSavedLocations ? 
+    user_locations ? 
     <Card className={cx(styles.true, shadowStyles.root)}>
       <Row>
         <Item position={'right'}>

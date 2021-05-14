@@ -120,7 +120,7 @@ class Home extends Component {
                               user_id={this.props.user.id}
                               addToUserLocations={this.addToUserLocations}
                               // deleteUserLocation={this.deleteUserLocation}
-                              hasSavedLocations={this.state.user_locations > 0}
+                              user_locations={this.state.user_locations}
                 >
                 </CurrentCard>
                 <br></br>
