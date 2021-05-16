@@ -15,11 +15,11 @@ import { Row, Item } from '@mui-treasury/components/flex';
 
 
 const useStyles = makeStyles((theme) => ({
-  true: {
+  false: {
     width: '85%',
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
-      width: '10%',
+      width: '70%',
       marginRight: theme.spacing(2),
     },
     
@@ -33,11 +33,15 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgb(255,255,255)',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
   },
-  false: {
+  true: {
     width: '85%',
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
       width: '45%',
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '70%',
+      marginRight: theme.spacing(1),    
     },
     borderRadius: 12,
     padding: 12,
@@ -80,14 +84,6 @@ const useStyles = makeStyles((theme) => ({
 export const CurrentCard = React.memo(function MusicCard({current, selected, latitude, longitude, user_id, addToUserLocations, user_locations}) {
   const styles = useStyles();
   const shadowStyles = useOverShadowStyles({ inactive: true });
-
-  const alreadyInUserLocations = (locations) => {
-    locations.map(loc => {
-      if (loc.latitude === latitude && loc.longitude === longitude) {
-        return true
-      }
-    })
-  }
 
   console.log(user_locations)
   return (
