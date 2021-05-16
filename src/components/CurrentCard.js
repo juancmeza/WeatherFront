@@ -95,9 +95,13 @@ export const CurrentCard = React.memo(function MusicCard({current, selected, lat
     <Card className={cx(styles.true, shadowStyles.root)}>
       <Row>
         <Item position={'right'}>
-          <IconButton className={styles.action}>
-            <LibraryAddOutlinedIcon onClick={() => addToUserLocations(selected, latitude, longitude, user_id)}></LibraryAddOutlinedIcon>
-          </IconButton>
+          {user_locations.filter(loc => loc.latitude === latitude && loc.longitude === longitude).length ?
+            null
+            :
+            <IconButton className={styles.action}>
+              <LibraryAddOutlinedIcon onClick={() => addToUserLocations(selected, latitude, longitude, user_id)}></LibraryAddOutlinedIcon>
+            </IconButton>
+          }
         </Item>
       </Row>
       <Avatar className={styles.avatar} src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@4x.png`} />
