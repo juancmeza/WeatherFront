@@ -15,17 +15,17 @@ import { Row, Item } from '@mui-treasury/components/flex';
 
 
 const useStyles = makeStyles((theme) => ({
-  false: {
+  true: {
     width: '85%',
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
-      width: '70%',
+      width: '90%',
       marginRight: theme.spacing(2),
     },
     
     [theme.breakpoints.up('md')]: {
-      width: '70%',
-      marginRight: theme.spacing(1),    
+      width: '80%',
+      marginRight: theme.spacing(-3),
     },
     borderRadius: 12,
     padding: 12,
@@ -33,15 +33,15 @@ const useStyles = makeStyles((theme) => ({
     color: 'rgb(255,255,255)',
     boxShadow: '0 5px 10px 0 rgba(10,10,10,0.82)',
   },
-  true: {
+  false: {
     width: '85%',
     margin: 'auto',
     [theme.breakpoints.up('sm')]: {
-      width: '45%',
+      width: '50%',
     },
     [theme.breakpoints.up('md')]: {
-      width: '70%',
-      marginRight: theme.spacing(1),    
+      width: '40%',
+      // marginRight: theme.spacing(1),    
     },
     borderRadius: 12,
     padding: 12,
@@ -85,9 +85,8 @@ export const CurrentCard = React.memo(function MusicCard({current, selected, lat
   const styles = useStyles();
   const shadowStyles = useOverShadowStyles({ inactive: true });
 
-  console.log(user_locations)
   return (
-    user_locations ? 
+    user_locations.length ? 
     <Card className={cx(styles.true, shadowStyles.root)}>
       <Row>
         <Item position={'right'}>
