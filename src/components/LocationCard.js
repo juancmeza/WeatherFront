@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   action: {
     backgroundColor: '#ffb514',
-    // color: '#fff',
+    marginLeft: theme.spacing(0.5),
     boxShadow: '0 1px 4px 0 rgba(0,0,0,0.12)',
     '&:hover': {
       backgroundColor: '#fff',
@@ -51,10 +51,10 @@ export const LocationCard = React.memo(function TutorCard({data, updateSelectedC
         <InfoSubtitle className={styles.temp}>Temp: {Math.round(data.current.temp)}° F</InfoSubtitle>
       </Info>
       <Item mr={1} position={'right'}>
-        <IconButton className={styles.action} classes={iconBtnStyles} position={'right'}>
+        <IconButton className={styles.action} classes={iconBtnStyles} position={'left'}>
           <CallMadeIcon onClick={() => updateSelectedCity(data.current, data.daily, data.location.city, data.location.latitude, data.location.longitude)}/>
         </IconButton>
-        <IconButton className={styles.action} classes={iconBtnStyles}>
+        <IconButton className={styles.action} classes={iconBtnStyles} position={'right'}>
           <DeleteForeverOutlinedIcon onClick={() => deleteUserLocation(data.location)}/>
         </IconButton>
       </Item>
