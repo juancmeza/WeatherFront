@@ -7,6 +7,8 @@ import { Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+// require('dotenv').config()
+
 class App extends Component {
   state = {
     email: "",
