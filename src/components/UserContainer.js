@@ -28,7 +28,7 @@ class UserContainer extends Component {
           <div className='App-logo2'>
             <WbSunnyIcon fontSize='large'/>
           </div>
-          <h1>Weather</h1>
+          <h1>QuickForecast</h1>
           <br></br>
         </div>
         <Row>

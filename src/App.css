@@ -23,7 +23,8 @@
 
 .App-logo {
   position: fixed;
-  top: 10;
+  top: 21.5px;
+  left: 41px;
   height: 4vmin;
   pointer-events: none;
   color: #ff7403;
@@ -80,6 +81,8 @@
   .App-logo {
     position: relative;
     height: 8vmin;
+    left: 0.1vmin;
+    top: 1vmin;
   }
 }
 
