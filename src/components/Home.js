@@ -23,7 +23,7 @@ class Home extends Component {
   };
 
   deleteUserLocation = (location) => {
-    fetch(`http://localhost:3000/user_locations/${location.id}`, {
+    fetch(`https://quickforecast.herokuapp.com/${location.id}`, {
       method: "DELETE",
     }).then(() =>
       this.setState({
@@ -37,7 +37,7 @@ class Home extends Component {
 
 
   fetchSelectedForecast = (latitude, longitude, name) => {
-    fetch(`http://localhost:3000/locations/?latitude=${latitude}&longitude=${longitude}`)
+    fetch(`https://quickforecast.herokuapp.com/locations/?latitude=${latitude}&longitude=${longitude}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 400 && data.status !== 500 && data){
@@ -62,7 +62,7 @@ class Home extends Component {
       }
     };
 
-    fetch("http://localhost:3000/user_locations", {
+    fetch("https://quickforecast.herokuapp.com/user_locations", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

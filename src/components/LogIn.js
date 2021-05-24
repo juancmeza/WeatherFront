@@ -23,7 +23,7 @@ class LogIn extends Component {
       password: this.state.password,
     };
 
-    fetch("http://localhost:3000/login", {
+    fetch("https://quickforecast.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

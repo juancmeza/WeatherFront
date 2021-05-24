@@ -23,7 +23,7 @@ class Signup extends Component {
       password: this.state.password,
     };
 
-    fetch("http://localhost:3000/users", {
+    fetch("https://quickforecast.herokuapp.com/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -45,7 +45,8 @@ class App extends Component {
   componentDidMount() {
     let userSession = sessionStorage.getItem("userId");
     if (userSession) {
-      fetch(`http://localhost:3000/users/${userSession}`)
+      // https://mighty-taiga-12974.herokuapp.com/
+      fetch(`https://quickforecast.herokuapp.com//users/${userSession}`)
         .then((res) => res.json())
         .then((user) =>
           this.setState({
