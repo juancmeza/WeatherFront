@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Nav from "../Nav";
 import { Redirect } from "react-router-dom";
-import LogOut from "./LogOut";
+
 class EditAccount extends Component {
   state = {
     email: this.props.userInfo.email,

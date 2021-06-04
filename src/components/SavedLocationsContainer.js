@@ -36,6 +36,7 @@ class SavedLocationsContainer extends React.Component {
             })
           }
         })
+        return true
     });
   }
 

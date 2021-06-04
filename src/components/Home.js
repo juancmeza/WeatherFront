@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import WeeklyContainer from "./WeeklyContainer";
 import Nav from "../Nav";
 import "../App.css";
-import { Row, Col, Button} from "react-bootstrap"
+import { Row, Col} from "react-bootstrap"
 import CurrentCard from './CurrentCard.js'
 import SavedLocationsContainer from "./SavedLocationsContainer.js";
 

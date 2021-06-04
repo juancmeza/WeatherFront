@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './App.css';
-import { Link } from 'react-router-dom';
 import Search from "./components/Search";
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
