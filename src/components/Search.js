@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import Script from 'react-load-script';
 import SearchBar from 'material-ui-search-bar';
-import {API_KEY} from '../Api.js' 
 
 
 // console.log(JSON.stringify(process.env.REACT_APP_GOOGLE_API_KEY))
-
+ const ap = "AIzaSyChpOAXOwYYvFTRZ"
 // const key = process.env.REACT_APP_GOOGLE_API_KEY
 // debugger
-const url = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}&libraries=places`
+const url = `https://maps.googleapis.com/maps/api/js?key=${ap}m3XgRCZtQaAa1bmPfE&libraries=places`
 
 class Search extends Component {
   constructor(props) {

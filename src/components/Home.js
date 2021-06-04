@@ -23,7 +23,7 @@ class Home extends Component {
   };
 
   deleteUserLocation = (location) => {
-    fetch(`https://quickforecast.herokuapp.com/${location.id}`, {
+    fetch(`https://quickforecast.herokuapp.com/user_locations/${location.id}`, {
       method: "DELETE",
     }).then(() =>
       this.setState({
