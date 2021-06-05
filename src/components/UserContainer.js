@@ -32,15 +32,13 @@ class UserContainer extends Component {
           <br></br>
         </div>
         <Row>
-          <Col></Col>
-          <Col></Col>
-            <Col>
+            <Col></Col>
+            <Col className='Sign-on-forms'>
                 {this.state.loginSwitch ? 
                 <LogIn toggleButton={this.showLogIn} getUser={this.props.getUser} loggedIn={this.props.loggedIn}/> : 
                 <Signup toggleButton={this.showLogIn} getUser={this.props.getUser}/>}
             </Col>
-          <Col></Col>
-          <Col></Col>
+            <Col></Col>
         </Row>
       </div>
     );

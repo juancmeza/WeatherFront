@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 class LogIn extends Component {
   state = {
     username: "",
     password: "",
     user: {},
-    redirect: false,
+    // redirect: false,
     logged: false,
+    loading: false,
   };
 
   handleLogin = (e) => {
@@ -18,6 +20,11 @@ class LogIn extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
+
+    this.setState({
+      loading: true,
+    })
+
     let newUser = {
       username: this.state.username,
       password: this.state.password,
@@ -36,7 +43,7 @@ class LogIn extends Component {
         this.setState({
           user: user,
           // user_locations: user.user_locations,
-          redirect: true,
+          // loaded: true,
           logged: true,
         });
       })
@@ -92,7 +99,11 @@ class LogIn extends Component {
               >
                 Sign Up
               </button>
-              {this.state.logged ? <Redirect to="/Home" /> : null}
+              {this.state.loading ? 
+                  this.state.logged ? <Redirect to="/Home" /> : <div><br></br><CircularProgress></CircularProgress><h5>Waiting for Heroku server...</h5></div>
+                  :
+                  null
+              }
             </div>
           </div>
         </div>
