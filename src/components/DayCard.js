@@ -62,24 +62,26 @@ export const DayCard = React.memo(function ProfileCard({date, description, high,
     height: '50%',
   });
   return (
-    <Card className={cx(styles.card, shadowStyles.root)}>
-      <CardContent>
-        <Avatar className={styles.avatar} src={`http://openweathermap.org/img/wn/${imgUrl}@2x.png`} />
-        <h3 className={styles.heading}>{date}</h3>
-        <span className={styles.subheader}>{description}</span>
-      </CardContent>
-      <Divider light />
-      <Box display={'flex'}>
-        <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-          <p className={styles.statLabel}>High</p>
-          <p className={styles.statValue}>{high}°</p>
-        </Box>
-        <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
-          <p className={styles.statLabel}>Low</p>
-          <p className={styles.statValue}>{low}°</p>
-        </Box>
-      </Box>
-    </Card>
+    <div className="Day-card">
+        <Card className={cx(styles.card, shadowStyles.root)}>
+          <CardContent>
+            <Avatar className={styles.avatar} src={`http://openweathermap.org/img/wn/${imgUrl}@2x.png`} />
+            <h3 className={styles.heading}>{date}</h3>
+            <span className={styles.subheader}>{description}</span>
+          </CardContent>
+          <Divider light />
+          <Box display={'flex'}>
+            <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+              <p className={styles.statLabel}>High</p>
+              <p className={styles.statValue}>{high}°</p>
+            </Box>
+            <Box p={2} flex={'auto'} className={borderedGridStyles.item}>
+              <p className={styles.statLabel}>Low</p>
+              <p className={styles.statValue}>{low}°</p>
+            </Box>
+          </Box>
+        </Card>
+    </div>
   );
 });
 

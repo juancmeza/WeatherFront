@@ -92,8 +92,8 @@ export const CurrentCard = React.memo(function MusicCard({current, selected, lat
           {user_locations.filter(loc => loc.latitude === latitude && loc.longitude === longitude).length ?
             null
             :
-            <IconButton className={styles.action}>
-              <LibraryAddOutlinedIcon onClick={() => addToUserLocations(selected, latitude, longitude, user_id)}></LibraryAddOutlinedIcon>
+            <IconButton className={styles.action} onClick={() => addToUserLocations(selected, latitude, longitude, user_id)}>
+              <LibraryAddOutlinedIcon></LibraryAddOutlinedIcon>
             </IconButton>
           }
         </Item>

@@ -141,6 +141,7 @@ class Home extends Component {
                     >
                     </SavedLocationsContainer>
                   </div>
+                  <br></br>
                 </Col> : 
                 null
                 }

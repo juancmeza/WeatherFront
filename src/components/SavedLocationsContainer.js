@@ -73,6 +73,7 @@ class SavedLocationsContainer extends React.Component {
   render () {
     return (
       <div className="Saved-locations">
+        <strong className='Saved-title'>Saved Locations</strong>
           {this.renderUserLocations(this.state.savedLocationsData)}
       </div>
     )

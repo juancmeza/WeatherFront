@@ -51,11 +51,12 @@ export const LocationCard = React.memo(function TutorCard({data, updateSelectedC
         <InfoSubtitle className={styles.temp}>Temp: {Math.round(data.current.temp)}° F</InfoSubtitle>
       </Info>
       <Item mr={1} position={'right'}>
-        <IconButton className={styles.action} classes={iconBtnStyles} position={'left'}>
-          <CallMadeIcon onClick={() => updateSelectedCity(data.current, data.daily, data.location.city, data.location.latitude, data.location.longitude)}/>
+        <IconButton className={styles.action} classes={iconBtnStyles} position={'left'}
+                    onClick={() => updateSelectedCity(data.current, data.daily, data.location.city, data.location.latitude, data.location.longitude)}>
+          <CallMadeIcon/>
         </IconButton>
-        <IconButton className={styles.action} classes={iconBtnStyles} position={'right'}>
-          <DeleteForeverOutlinedIcon onClick={() => deleteUserLocation(data.location)}/>
+        <IconButton className={styles.action} classes={iconBtnStyles} position={'right'} onClick={() => deleteUserLocation(data.location)}>
+          <DeleteForeverOutlinedIcon/>
         </IconButton>
       </Item>
     </Row>

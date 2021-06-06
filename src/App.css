@@ -68,7 +68,7 @@
 }
 
 .Full-screen {
-  margin-right: 1%;
+  margin-right: 0.5%;
 }
 
 @media screen and (max-width: 768px) {
@@ -78,6 +78,8 @@
 
   .Search-bar {
     max-width: 275px;
+    margin-left: auto;
+
     /* left: 60px; */
     /* position: fixed; */
   }
@@ -87,16 +89,21 @@
     height: 8vmin;
     left: 0.1vmin;
     top: 1vmin;
+    margin-right: -5%;
+  }
+
+  .Logout {
+    margin-left: auto;
   }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .Logout {
     position: absolute;
     top: 2rem;
     right: 1rem;
   }
-}
+} */
 
 nav {
   /* display: flex; */
@@ -129,6 +136,7 @@ nav {
 .Search-bar {
   position: relative;
   width: 350px;
+  margin-right: auto;
   /* left: -28%; */
 }
 
@@ -138,6 +146,9 @@ nav {
 
 .Logout {
   justify-content: flex-end;
+  position: absolute;
+  top: 2rem;
+  right: 0.5rem;
 }
 
 .Current-Weather {
@@ -256,12 +267,8 @@ html {
   padding: 5px;
 }
 
-.DayInWeek {
-  /* max-width: 80%;
-  min-width: 75%; */
-  /* height: 200px; */
-  width: 125px;
-  background-color: white;
+.Day-card {
+  margin: auto;
 }
 
 .Saved-table {
@@ -271,7 +278,13 @@ html {
   box-shadow: 0 5px 10px rgb(42, 41, 41);
   background: linear-gradient(to right, #014e6f, #0d7d8e);
   margin-left: 15%;
+  padding-top: 0.5rem;
   /* padding-left: 25%; */
+}
+
+.Saved-title {
+  color: #ffb514;
+  font-size: 1.5rem;
 }
 
 @media screen and (max-width: 768px) {
