@@ -111,7 +111,7 @@ class Signup extends Component {
                 Sign in
               </button>
               {this.state.loading ? 
-                  this.state.logged ? <Redirect to="/Home" /> : <div><br></br><CircularProgress></CircularProgress><h5>Waiting for Heroku server...</h5></div>
+                  this.state.redirect ? <Redirect to="/Home" /> : <div><br></br><CircularProgress></CircularProgress><h5>Waiting for Heroku server...</h5></div>
                   :
                   null
               }
