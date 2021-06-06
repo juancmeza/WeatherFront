@@ -43,11 +43,15 @@ class LogIn extends Component {
         this.setState({
           user: user,
           // user_locations: user.user_locations,
-          // loaded: true,
           logged: true,
         });
       })
-    .catch((message) => alert("Invalid username or password"));
+      .catch((message) => {
+        alert("Invalid username or password")
+        this.setState({
+          loading: false,
+        })
+      })
 
   };
 

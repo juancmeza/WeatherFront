@@ -68,7 +68,7 @@
 }
 
 .Full-screen {
-  margin-right: 5%;
+  margin-right: 1%;
 }
 
 @media screen and (max-width: 768px) {
@@ -90,9 +90,11 @@
   }
 }
 
-@media screen and (min-width: 980px) {
-  .Sign-on-card {
-    margin: auto;
+@media screen and (min-width: 768px) {
+  .Logout {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
   }
 }
 
@@ -237,6 +239,7 @@ html {
   padding: 10px;
   background: linear-gradient(#ff8503, #ffb514);
   justify-content: center;
+  margin: auto;
 }
 
 .pac-item {
