@@ -282,6 +282,11 @@ html {
   /* padding-left: 25%; */
 }
 
+.Saved-locations {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
 .Saved-title {
   color: #ffb514;
   font-size: 1.5rem;
