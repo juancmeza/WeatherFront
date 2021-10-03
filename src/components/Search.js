@@ -43,7 +43,7 @@ class Search extends Component {
     // Fire Event when a suggested name is selected
     this.autocomplete.addListener('place_changed', this.handlePlaceSelect);
   }
-  
+
   handlePlaceSelect = () => {
 
     // Extract City From Address Object
@@ -54,7 +54,7 @@ class Search extends Component {
 
       const latitude = addressObject.geometry.location.lat();
       const longitude = addressObject.geometry.location.lng();
-      
+
       this.setState(
         {
           city: address[0].long_name,
@@ -75,12 +75,12 @@ class Search extends Component {
           url={url}
           onLoad={this.handleScriptLoad}
         />
-        
+
         <div>
           <SearchBar className='Search-bar' id="autocomplete" placeholder="Search City" hintText="Search City" value={this.state.query}
             style={{
               margin: '0 auto',
-              width: '100%',
+              width: '90%',
               height: 40
             }}
           />

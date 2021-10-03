@@ -41,9 +41,9 @@ class Home extends Component {
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 400 && data.status !== 500 && data){
-          this.setState({ 
-            current: data.lmao.current, 
-            daily: data.lmao.daily, 
+          this.setState({
+            current: data.lmao.current,
+            daily: data.lmao.daily,
             selected: name,
             latitude: latitude,
             longitude: longitude,
@@ -73,7 +73,7 @@ class Home extends Component {
       .then((userloc) => {
         this.setState({
           user_locations: [...this.state.user_locations, userloc],
-        });      
+        });
       });
   };
 
@@ -99,6 +99,14 @@ class Home extends Component {
       this.setState({
         user_locations: this.props.user_locations
       });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.user_locations !== this.props.user_locations) {
+      this.setState({
+        user_locations: this.props.user_locations
+      })
+    }
   }
 
 
@@ -129,7 +137,7 @@ class Home extends Component {
                 {this.state.user_locations.length > 0 ?
                 <Col>
                   <div className="Saved-table">
-                    <SavedLocationsContainer user_locations={this.state.user_locations} 
+                    <SavedLocationsContainer user_locations={this.state.user_locations}
                                              updateSelectedCity={this.updateSelectedCity}
                                              current={this.state.current}
                                              daily={this.state.daily}
@@ -137,12 +145,12 @@ class Home extends Component {
                                              longitude={this.state.longitude}
                                              selected={this.state.selected}
                                              deleteUserLocation={this.deleteUserLocation}
-                                             locationToDelete={this.state.locationToDelete}      
+                                             locationToDelete={this.state.locationToDelete}
                     >
                     </SavedLocationsContainer>
                   </div>
                   <br></br>
-                </Col> : 
+                </Col> :
                 null
                 }
           </Row>

@@ -8,7 +8,7 @@ import WbSunnyIcon from '@material-ui/icons/WbSunny';
 class UserContainer extends Component {
 
   state = {
-    loginSwitch: false
+    loginSwitch: true
   }
 
   showLogIn = () => {
@@ -34,8 +34,8 @@ class UserContainer extends Component {
         <Row>
             <Col></Col>
             <Col className='Sign-on-forms'>
-                {this.state.loginSwitch ? 
-                <LogIn toggleButton={this.showLogIn} getUser={this.props.getUser} loggedIn={this.props.loggedIn}/> : 
+                {this.state.loginSwitch ?
+                <LogIn toggleButton={this.showLogIn} getUser={this.props.getUser} loggedIn={this.props.loggedIn}/> :
                 <Signup toggleButton={this.showLogIn} getUser={this.props.getUser}/>}
             </Col>
             <Col></Col>

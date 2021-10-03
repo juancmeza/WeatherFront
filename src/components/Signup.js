@@ -66,7 +66,6 @@ class Signup extends Component {
                       id="email"
                       name="email"
                     />{" "}
-                    <br />
                   </label>
                 </div>
 
@@ -80,7 +79,6 @@ class Signup extends Component {
                       id="username"
                       name="username"
                     />{" "}
-                    <br />
                   </label>
                 </div>
                 <div className="form-group">
@@ -93,7 +91,6 @@ class Signup extends Component {
                       id="password"
                       name="password"
                     />{" "}
-                    <br />
                   </label>
                 </div>
                 <button
@@ -103,14 +100,15 @@ class Signup extends Component {
                   Create Account
                 </button>
               </form>
-
+              <br></br>
+              <div>Already have an account?</div>
               <button
                 className="btn btn-outline-light btn-block"
                 onClick={this.props.toggleButton}
               >
                 Sign in
               </button>
-              {this.state.loading ? 
+              {this.state.loading ?
                   this.state.redirect ? <Redirect to="/Home" /> : <div><br></br><CircularProgress></CircularProgress><h5>Waiting for Heroku server...</h5></div>
                   :
                   null
