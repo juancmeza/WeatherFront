@@ -47,12 +47,12 @@ class SavedLocationsContainer extends React.Component {
   }
 
   addNewLocationData = () => {
-    const {current, daily, latitude, longitude, selected, id} = this.props
+    const {current, daily, latitude, longitude, selected, user_locations} = this.props
 
     const newLocation = {
       current: current,
       daily: daily,
-      location: {city: selected, id: id, latitude: latitude, longitude: longitude}
+      location: {city: selected, id: user_locations.filter(location => location.city === selected)[0].id, latitude: latitude, longitude: longitude}
     }
 
     this.setState({
