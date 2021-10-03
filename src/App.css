@@ -210,6 +210,8 @@ html {
   display: flex;
   padding: 10px;
   justify-content: center;
+  /* justify-items: center;
+  align-items: center; */
 }
 
 .UserLocations {
@@ -270,6 +272,8 @@ html {
 }
 
 .Day-card {
+  display: flex;
+  justify-content: center;
   margin: auto;
 }
 
