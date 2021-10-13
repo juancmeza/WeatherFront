@@ -42,6 +42,10 @@ class App extends Component {
     });
   };
 
+  keepAlive = () => {
+
+  }
+
   componentDidMount() {
     let userSession = sessionStorage.getItem("userId");
     if (userSession) {
@@ -103,5 +107,3 @@ class App extends Component {
 }
 
 export default App;
-
-
