@@ -43,8 +43,18 @@ class App extends Component {
   };
 
   keepAlive = () => {
+    setInterval(function() {
+      fetch(`https://quickforecast.herokuapp.com/`)
+        .then((res) => res.json())
+        .then((res) => {
+          console.log('it works')
+        }
+      })
 
+    }, 60 * 20)
   }
+
+  keepAlive()
 
   componentDidMount() {
     let userSession = sessionStorage.getItem("userId");
