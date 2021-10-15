@@ -116,7 +116,6 @@ class Home extends Component {
           <Nav fetchSelectedForecast={this.fetchSelectedForecast} handleLogout={this.props.handleLogout}/>
         </div>
         <br></br>
-        <div>{this.consoleLogStuff()}</div>
         <div className='Top'>
           <Row>
               <Col>

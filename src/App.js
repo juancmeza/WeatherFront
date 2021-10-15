@@ -9,6 +9,19 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 // require('dotenv').config()
 
+const keepAlive = () => {
+  setInterval(function() {
+    fetch(`https://quickforecast.herokuapp.com/users/90`)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+      }
+    )
+  }, 60 * 20 * 1000)
+};
+
+keepAlive()
+
 class App extends Component {
   state = {
     email: "",
@@ -42,19 +55,6 @@ class App extends Component {
     });
   };
 
-  keepAlive = () => {
-    setInterval(function() {
-      fetch(`https://quickforecast.herokuapp.com/`)
-        .then((res) => res.json())
-        .then((res) => {
-          console.log('it works')
-        }
-      })
-
-    }, 60 * 20)
-  }
-
-  keepAlive()
 
   componentDidMount() {
     let userSession = sessionStorage.getItem("userId");
